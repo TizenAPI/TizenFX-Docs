@@ -220,8 +220,6 @@
     "dest": "_site",
     "template": [
       "default",
-      "./templates/material",
-      "./templates/tizen",
       "./templates/docs.tizen.org"
     ],
     "globalMetadata": {
