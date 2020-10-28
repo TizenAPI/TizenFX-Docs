@@ -51,7 +51,7 @@ $(function () {
   // Styling for tables in conceptual documents using Bootstrap.
   // See http://getbootstrap.com/css/#tables
   function renderTables() {
-    $('table').addClass('table table-bordered table-striped table-condensed').wrap('<div class=\"table-responsive\"></div>');
+    $('table').wrap('<div class=\"table-infra\"></div>');
   }
 
   // Styling for alerts.
@@ -594,7 +594,7 @@ $(function () {
   function renderAffix() {
     var hierarchy = getHierarchy();
     if (hierarchy && hierarchy.length > 0) {
-      var html = '<h5 class="title">In This Article</h5>'
+      var html = '<h5 class="title">ON THIS PAGE</h5>'
       html += util.formList(hierarchy, ['nav', 'bs-docs-sidenav']);
       $("#affix").empty().append(html);
       if ($('footer').is(':visible')) {
@@ -1083,9 +1083,9 @@ $(function () {
         items: item
       };
       var cls = [].concat(classes).join(" ");
-      return getList(model, cls);
+      return getList(model, cls, 0);
 
-      function getList(model, cls) {
+      function getList(model, cls, depth) {
         if (!model || !model.items) return null;
         var l = model.items.length;
         if (l === 0) return null;
@@ -1096,8 +1096,8 @@ $(function () {
           var href = item.href;
           var name = item.name;
           if (!name) continue;
-          html += href ? '<li><a href="' + href + '">' + name + '</a>' : '<li>' + name;
-          html += getList(item, cls) || '';
+          html += href ? '<li><a class="depth-' + depth + '" href="' + href + '">' + name + '</a>' : '<li>' + name;
+          html += getList(item, cls, depth + 1) || '';
           html += '</li>';
         }
         html += '</ul>';
