@@ -143,6 +143,10 @@ h6,
   border: 0;
   margin-bottom: 0;
 }
+.navbar:before,
+.navbar:after {
+  display: none;
+}
 .navbar .nav-link {
   line-height: inherit;
   padding: .5rem 1rem;
