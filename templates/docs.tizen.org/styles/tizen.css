@@ -4,11 +4,12 @@
 
 .tz_multiple_items > span {
   margin-right: 10px;
-  background-color: #ccc;
-}
-
-.decalaration, .parameters, .returns, .typeParameters, .fieldValue, .propertyValue, .eventType, .overrides, .exceptions {
-  color: #777;
+  white-space: nowrap;
+  background-color: #e4e2e2;
+  padding: 0.125rem 0.25rem;
+  margin-top: 0.25rem;
+  margin-top: 0.25rem;
+  display: inline-block;
 }
 
 .container {
@@ -16,7 +17,8 @@
 }
 
 .sidetoc {
-  top: 280px;
+  top: 288px;
+  padding-right: 0.5rem;
 }
 
 .article.grid-right {
@@ -52,7 +54,8 @@
 .attribute-list {
   display: flex;
   margin: 0;
-  font-size: 14px;
+  font-size: 1.125rem;
+  line-height: 1.6875rem;
   color: #5e5e5e;
 }
 
@@ -93,13 +96,206 @@ dl.attribute-list dd {
   overflow: inherit;
 }
 
+.view-source {
+  padding-right: 1.5rem;
+}
+
 .obsolete {
-  background-color: palevioletred;
-  font-size: 12px;
-  font-weight: bold;
-  color: white;
+  color: #df2626;
+}
+
+.described-list-item .obsolete {
+  padding-left: 2.5rem;
+  margin-top: 1rem;
 }
 
 .obsolete-affix {
     text-decoration: line-through;
+}
+
+.entity-type {
+  display: block;
+  font-size: 1.5rem;
+  line-height: 1.875rem;
+  margin-bottom: 0.75rem;
+}
+
+header {
+  top: 81px;
+}
+
+section {
+  clear: both;
+}
+
+a[id]:not([href]) {
+  display: none;
+}
+
+.sitefilter {
+  padding-top: 42px;
+}
+
+.api-infra .toc-wrapper {
+  padding-top: 27px;
+}
+
+.api-infra .md-content-wrapper #_content .entity h6 {
+  border-bottom: 1px solid #e4e2e2;
+  line-height: 1.6875rem;
+  padding-bottom: 0.75rem;
+  margin: 3rem 0 1rem;
+}
+
+.docs-infra.api-infra .md-content-wrapper #_content .entity h6 + h6 {
+  margin-top: 0;
+}
+
+.docs-infra .api-infra .md-content-wrapper h1 {
+  margin-bottom: 0.75rem;
+}
+
+.api-infra .md-content-wrapper .entity-namespace h1 {
+  padding-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid #e4e2e2;
+}
+
+.md-content-wrapper .entity .described-list-item {
+  border-bottom: 1px solid #e4e2e2;
+  padding: 0 0 2rem;
+  margin-top: 2rem;
+}
+
+.md-content-wrapper .entity .described-list-item h4 {
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.md-content-wrapper .entity .described-list-item p {
+  margin: 0;
+}
+
+.docs-infra .md-content-wrapper h1 {
+  margin-bottom: .075rem;
+}
+
+.docs-infra .md-content-wrapper h2 {
+  border-bottom: 1px solid #e4e2e2;
+  padding-bottom: 1.5rem;
+}
+
+.md-content-wrapper .entity .entity-child {
+  margin-top: 3rem;
+}
+
+.md-content-wrapper .entity .entity-child h4
+{
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 0 1rem;
+  padding-left: 0;
+  float: left;
+}
+
+.md-content-wrapper .entity .entity-child p {
+  margin: 0;
+}
+
+.entity td p {
+  margin: 0;
+}
+
+.entity .table>tbody>tr>td,
+.entity .table>tbody>tr>th,
+.entity .table>tfoot>tr>td,
+.entity .table>tfoot>tr>th,
+.entity .table>thead>tr>td,
+.entity .table>thead>tr>th {
+  padding: 1rem 0;
+  border-bottom: 1px solid #e4e2e2;
+}
+
+.entity td:first-child {
+  width: 25%;
+  min-width: 100px;
+}
+
+.api-infra .entity td:nth-child(2) {
+  width: 25%;
+  min-width: 100px;
+}
+
+.entity td:nth-child(3) {
+  width: 50%;
+  min-width: 100px;
+}
+
+.md-content-wrapper .entity table {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6875rem;
+}
+
+.docs-infra .api-infra .seealso h5 {
+  margin-bottom: 0;
+}
+
+.docs-infra #td_docs-toc h5.title {
+  margin-top: 0;
+}
+
+.entity-header .contribution {
+  margin-bottom: 1.5rem;
+  margin-right: 1.5rem;
+  font-size: 1.125rem;
+  line-height: 3.5625rem;
+  font-weight: normal;
+}
+
+.entity dl,
+.entity dt,
+.entity dd {
+  line-height: 1.6875rem;
+  margin-bottom: 0;
+}
+
+.entity dl + dl {
+  margin-top: 0.5rem;
+}
+
+.entity dt {
+  font-weight: normal;
+}
+
+.content-not-found {
+  padding-top: 4.675rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.content-not-found img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto 2.5rem;
+}
+
+@media screen and (max-width: 767px) {
+  .md-content-wrapper .entity .described-list-item p {
+    margin: 0;
+  }
+
+  .md-content-wrapper .entity .described-list-item h4 {
+    padding-left: 1.25rem;
+  }
+
+  .docs-infra .md-content-wrapper {
+    padding-top: 0;
+  }
+
+  .sidenav {
+    left: 0;
+    width: 100%;
+    background: #fff;
+  }
 }

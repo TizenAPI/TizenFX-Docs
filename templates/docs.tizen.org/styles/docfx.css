@@ -72,18 +72,9 @@ h6 mark {
 }
 
 .level0.summary {
-  margin: 2em 0 2em 0;
+  margin: 2em 0 2.5rem 0;
 }
 
-.level1.summary {
-  margin: 1em 0 1em 0;
-}
-
-span.parametername,
-span.paramref,
-span.typeparamref {
-    font-style: italic;
-}
 span.languagekeyword{
     font-weight: bold;
 }
@@ -281,10 +272,6 @@ article section {
 #autocollapse .navbar-brand {
   margin-left: 0;
 }
-.collapse.in,
-.collapsing {
-  text-align: center;
-}
 .collapsing .navbar-form {
   margin: 0 auto;
   max-width: 400px;
@@ -440,16 +427,19 @@ article section {
 .is-sidebar {
   display: flex;
   justify-content: flex-end;
+  position: relative;
+  z-index: 1;
 }
 
 .sidenav  {
   position: fixed;
-  margin-top: 80px;
+  top: 80px;
+  padding-top: 11px;
 }
 
 .sidetoc {
   position: fixed;
-  width: 284px;
+  width: 276px;
   top: 150px;
   bottom: 0;
   overflow-x: hidden;
@@ -474,7 +464,7 @@ article section {
 }
 
 body .toc{
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .sidetoggle.ng-hide {
@@ -498,6 +488,7 @@ body .toc{
 .toc {
   margin: 0;
   padding: 0 1.5rem 0 0;
+  overflow: hidden;
 }
 .expand-stub {
   position: absolute;
@@ -554,12 +545,12 @@ body .toc{
     background-position: left 0 center;
 }
 
-.toc .nav > li.filtered > ul,
-.toc .nav > li.in > ul {
+.toc .nav > li.filtered > ul.nav,
+.toc .nav > li.in > ul.nav {
   display: block;
 }
 
-.toc .nav > li > ul {
+.toc .nav > li > ul.nav{
   display: none;
 }
 
@@ -594,11 +585,9 @@ body .toc{
   margin: 0 15px 0px 15px;
 }
 .sidefilter {
-  position: unset;
-  top: 90px;
   width: 284px;
-  padding-top: 1.5rem;
   z-index: 1;
+  margin-top: 1.5rem;
 }
 .sidefilter-separator {
   height: 1px;
@@ -615,7 +604,7 @@ body .toc{
   align-items: center;
   border-color: #1e242d;
   border-radius: .375rem;
-  width: 284px;
+  width: 100%;
   height: 32px;
   transition: none;
   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48ZGVmcz48c3R5bGU+LmEsLmJ7ZmlsbDpub25lO30uYntzdHJva2U6IzFlMjQyZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9PC9zdHlsZT48L2RlZnM+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAyNCkgcm90YXRlKC05MCkiPjxwYXRoIGNsYXNzPSJhIiBkPSJNMjQsMjRIMFYwSDI0WiIvPjxwYXRoIGNsYXNzPSJiIiBkPSJNNDE4LjUsMzcwLjVsLTYsNi02LTYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDM4NS41IC00MDAuNSkgcm90YXRlKDkwKSIvPjwvZz48L3N2Zz4=);
@@ -669,7 +658,7 @@ body .toc{
 }
 .toc-filter > input {
   width: 100%;
-  height: 2rem;
+  height: 32px;
   padding: 0 1rem 0 1rem;
   border: 1px solid #1e242d;
   border-radius: .375rem;
@@ -849,10 +838,6 @@ footer {
   #mobile-indicator {
     display: block;
   }
-  /* TOC display for responsive */
-  .article {
-    margin-top: 30px !important;
-  }
   header {
     position: static;
   }
@@ -861,14 +846,13 @@ footer {
   }
   .sidenav {
     padding: 15px 0;
-    margin-left: -15px;
-    margin-right: -15px;
   }
   .sidefilter {
     position: static;
     width: auto;
     float: none;
     border: none;
+    padding: 0 15px;
   }
   .sidetoc {
     position: static;
@@ -879,6 +863,7 @@ footer {
   }
   .toc .nav > li, .toc .nav > li >a {
     display: inline-block;
+    padding-top: 4px;
   }
   .toc li:after {
     margin-left: -3px;
@@ -910,7 +895,7 @@ footer {
     display: none;
   }*/
   .sideaffix {
-    display: none;
+  /*  display: none;*/
   }
   .mobile-hide {
     display: none;
@@ -1088,20 +1073,40 @@ div.embeddedvideo iframe {
 /* Color theme */
 
 /* These are not important, tune down **/
-.decalaration, .fieldValue, .parameters, .returns {
-  color: #a2a2a2;
+
+.decalaration, .parameters, .returns, .typeParameters, .fieldValue, .propertyValue, .eventType, .overrides, .exceptions {
+  color: #1e242d;
+  font-size: 1.5rem;
+  line-height: 1.875rem;
+  margin-bottom: 0.75rem;
 }
 
 /* Major sections, increase visibility **/
 #fields, #properties, #methods, #events {
-    font-weight: bold;
-    margin-top: 2em;
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e4e2e2;
 }
 
 /* Infra styles */
 .api-infra ul {
-  list-style: none;
   padding: 0;
+  list-style: none;
   font-size: 1.125rem;
   line-height: 1.5rem;
+}
+
+.api-infra .entity ul {
+  padding-left: 1.15rem;
+  list-style: disc;
+}
+
+.api-infra h4 {
+  color: #1e242d;
+  padding-left: 1.5rem;
+}
+
+.hidden-anchor {
+  margin: 0;
 }

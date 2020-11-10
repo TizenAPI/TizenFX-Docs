@@ -338,7 +338,7 @@ $(function () {
 
   // Update href in navbar
   function renderNavbar() {
-    var navbar = $('#navbar ul')[0];
+    var navbar = $('#secondaryNavbar ul')[0];
     if (typeof (navbar) === 'undefined') {
       loadNavbar();
     } else {
@@ -405,7 +405,7 @@ $(function () {
   }
 
   function renderSidebar() {
-    var sidetoc = $('#sidetoggle .sidetoc')[0];
+    var sidetoc = $('#secondaryNavbar .sidetoc')[0];
     if (typeof (sidetoc) === 'undefined') {
       loadToc();
     } else {
@@ -542,14 +542,14 @@ $(function () {
         return;
       }
       tocPath = tocPath.replace(/\\/g, '/');
-      $('#sidetoc').load(tocPath + " #sidetoggle > div", function () {
+      $('#secondaryNavbar').load(tocPath + " #sidetoggle > div", function () {
         var index = tocPath.lastIndexOf('/');
         var tocrel = '';
         if (index > -1) {
           tocrel = tocPath.substr(0, index + 1);
         }
         var currentHref = util.getAbsolutePath(window.location.pathname);
-        $('#sidetoc').find('a[href]').each(function (i, e) {
+        $('#secondaryNavbar').find('a[href]').each(function (i, e) {
           var href = $(e).attr("href");
           if (util.isRelativePath(href)) {
             href = tocrel + href;
@@ -583,8 +583,8 @@ $(function () {
       });
     })
 
-    var html = util.formList(breadcrumb, 'breadcrumb');
-    $('#breadcrumb').html(html);
+    var html = util.formList(breadcrumb, 'breadcrumb', 'ol', 'breadcrumb-item');
+    $('#td_docs-breadcrumb').html(html);
   }
 
   //Setup Affix
@@ -601,7 +601,7 @@ $(function () {
 
     function getHierarchy() {
       // supported headers are h1, h2, h3, and h4
-      var $headers = $($.map(['h1', 'h2', 'h3', 'h4'], function (h) { return ".article article " + h; }).join(", "));
+      var $headers = $($.map(['h1', 'h2', 'h3', 'h4'], function (h) { return "#_content " + h; }).join(", "));
 
       // a stack of hierarchy items that are currently being built
       var stack = [];
@@ -1067,30 +1067,34 @@ $(function () {
       }
     }
 
-    function formList(item, classes) {
+    function formList(item, classes, listTag, itemClass) {
       var level = 1;
       var model = {
         items: item
       };
       var cls = [].concat(classes).join(" ");
+
+      listTag = listTag || 'ul';
+      itemClass = itemClass || '';
+
       return getList(model, cls, 0);
 
       function getList(model, cls, depth) {
         if (!model || !model.items) return null;
         var l = model.items.length;
         if (l === 0) return null;
-        var html = '<ul class="level' + level + ' ' + (cls || '') + '">';
+        var html = '<' + listTag + ' class="level' + level + ' ' + (cls || '') + '">';
         level++;
         for (var i = 0; i < l; i++) {
           var item = model.items[i];
           var href = item.href;
           var name = item.name;
           if (!name) continue;
-          html += href ? '<li><a class="depth-' + depth + '" href="' + href + '">' + name + '</a>' : '<li>' + name;
+          html += href ? '<li class="' + itemClass + '"><a class="depth-' + depth + '" href="' + href + '">' + name + '</a>' : '<li>' + name;
           html += getList(item, cls, depth + 1) || '';
           html += '</li>';
         }
-        html += '</ul>';
+        html += '</' + listTag + '>';
         return html;
       }
     }

@@ -37,8 +37,25 @@ $(function () {
       $(this).on('click', function (e) {
         const $target = $(e.target);
 
+        $menu.find('.active').removeClass('active');
+        $target.addClass('active');
+
+        const newURL = window.location.href.replace(/\/API\d+\//, '/' + $target.data('value') + '/');
+
         $('#dropdownApiVersionButton').html(apiVersions[$target.data('value')]);
-        window.location.href = '../../' + $target.data('value') + '/api/';
+
+        $.ajax({
+          type: 'HEAD',
+          url: newURL,
+          complete: function(xhr) {
+            if (xhr.status === 200) {
+              window.location.href = newURL;
+            } else {
+              $('#_content').html('<div class="content-not-found"><img src="../../styles/404.svg" />Not found</div>');
+              history.pushState({}, 'Document not found', newURL);
+            }
+          }
+        });
       });
     });
   }
