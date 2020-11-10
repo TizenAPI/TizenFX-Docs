@@ -1097,3 +1097,11 @@ div.embeddedvideo iframe {
     font-weight: bold;
     margin-top: 2em;
 }
+
+/* Infra styles */
+.api-infra ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
