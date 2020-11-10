@@ -8,22 +8,21 @@
 <!--[if IE]><![endif]-->
 <html>
   {{>partials/head}}
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
-        {{^_disableNavbar}}
-        {{>partials/navbar}}
-        {{/_disableNavbar}}
-        {{^_disableBreadcrumb}}
-        {{>partials/breadcrumb}}
-        {{/_disableBreadcrumb}}
-      </header>
-      {{#_enableSearch}}
-      <div class="container body-content">
-        {{>partials/searchResults}}
-      </div>
-      {{/_enableSearch}}
-      <div class="layout--main">
+  <body>
+    <header>
+      {{^_disableNavbar}}
+      {{>partials/navbar}}
+      {{/_disableNavbar}}
+      {{^_disableBreadcrumb}}
+      {{>partials/breadcrumb}}
+      {{/_disableBreadcrumb}}
+    </header>
+    {{#_enableSearch}}
+    <div class="container body-content">
+      {{>partials/searchResults}}
+    </div>
+    {{/_enableSearch}}
+    <div class="layout--main">
         <div class="container-fluid h-100">
           <div role="main" class="article row flex-xl-nowrap h-100 body-content hide-when-search">
             <div class="col-md-3 col-xl-2 px-0 layout--column is-sidebar" id="td_docs-sidebar">
@@ -38,12 +37,13 @@
             </div>
             <main class="col-md-9 col-xl-8 layout--column is-content">
               <article class="content wrap md-content-wrapper" id="_content" data-uid="{{uid}}">
-                {{!body}}
+                <section class="markdown-body">
+                  {{!body}}
+                </div>
               </article>
             </main>
           </div>
         </div>
-      </div>
       {{^_disableFooter}}
       {{>partials/footer}}
       {{/_disableFooter}}
