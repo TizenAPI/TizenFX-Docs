@@ -9,19 +9,6 @@
 <html>
   {{>partials/head}}
   <body>
-    <header>
-      {{^_disableNavbar}}
-      {{>partials/navbar}}
-      {{/_disableNavbar}}
-      {{^_disableBreadcrumb}}
-      {{>partials/breadcrumb}}
-      {{/_disableBreadcrumb}}
-    </header>
-    {{#_enableSearch}}
-    <div class="container body-content">
-      {{>partials/searchResults}}
-    </div>
-    {{/_enableSearch}}
     <div class="layout--main">
         <div class="container-fluid h-100">
           <div role="main" class="article row flex-xl-nowrap h-100 body-content hide-when-search">

@@ -597,13 +597,6 @@ $(function () {
       if ($('footer').is(':visible')) {
         $(".sideaffix").css("bottom", "70px");
       }
-      // $('#affix a').click(function(e) {
-      //   var scrollspy = $('[data-spy="scroll"]').data()['bs.scrollspy'];
-      //   var target = e.target.hash;
-      //   if (scrollspy && target) {
-      //     scrollspy.activate(target);
-      //   }
-      // });
     }
 
     function getHierarchy() {
