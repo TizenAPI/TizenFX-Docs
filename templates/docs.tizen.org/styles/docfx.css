@@ -730,12 +730,12 @@ body .toc{
 .sideaffix > div.contribution {
   margin-bottom: 20px;
 }
-.sideaffix > div.contribution > ul > li > a.contribution-link {
-  padding: 6px 10px;
+.sideaffix > div.contribution a.contribution-link {
+  padding: 6px 10px 6px 0;
   font-weight: bold;
   font-size: 14px;
 }
-.sideaffix > div.contribution > ul > li > a.contribution-link:hover {
+.sideaffix > div.contribution a.contribution-link:hover {
   background-color: #ffffff;
 }
 .sideaffix ul.nav > li > a:focus {
