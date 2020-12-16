@@ -221,7 +221,8 @@
     "template": [
       "default",
       "./templates/material",
-      "./templates/tizen"
+      "./templates/tizen",
+      "./templates/docs.tizen.org"
     ],
     "globalMetadata": {
         "_appLogoPath" : "images/tizen_logo.png",
