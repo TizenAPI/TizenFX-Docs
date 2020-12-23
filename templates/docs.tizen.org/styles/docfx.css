@@ -72,7 +72,7 @@ h6 mark {
 }
 
 .level0.summary {
-  margin: 2em 0 2.5rem 0;
+  margin: 2.5em 0;
 }
 
 span.languagekeyword{
@@ -493,6 +493,7 @@ body .toc{
 .expand-stub {
   position: absolute;
   left: -10px;
+  top: -4px;
 }
 .toc .nav > li > a.sidetoc-expand {
   position: absolute;
@@ -500,10 +501,10 @@ body .toc{
   left: 0;
 }
 .toc .nav > li > a {
-  color: #666666;
+  color: #1e242d;
   display: block;
   padding: 0;
-  margin-left: 42px;
+  margin-left: 48px;
 }
 .toc .nav > li > a:hover,
 .toc .nav > li > a:focus {
@@ -561,8 +562,13 @@ body .toc{
 .toc .level1 > li {
   position: relative;
 }
+
+.toc .level1 > li > a{
+  margin-bottom: 14px;
+}
+
 .toc .level1 > li:not(:last-child) {
-  margin-bottom: .75rem;
+  margin-bottom: 1rem;
 }
 .toc .level2 {
   margin-top: .75rem;
@@ -570,15 +576,17 @@ body .toc{
 }
 .toc .level2 > li {
   border-radius: .375rem;
+  padding: 3.5px 0;
 }
 .toc .level2 > li:not(:last-child) {
   margin-bottom: .75rem;
 }
 .toc .level2 > li > a {
-  margin-left: 31px;
+  margin-left: 32px;
 }
 .toc .level2 > li.in {
   background-color: #dfefff;
+  font-weight: bold;
 }
 .toc-toggle {
   display: none;
@@ -592,8 +600,8 @@ body .toc{
 .sidefilter-separator {
   height: 1px;
   background-color: #1E242D;
-  width: 100px;
-  margin: 1.5rem 0 1.5rem 1rem;
+  margin: 1.5rem auto;
+  width: 80%;
 }
 .sidefilter .dropdown {
   margin-bottom: 1rem;
@@ -750,7 +758,6 @@ body .toc{
   color: #337ab7;
 }
 .affix ul > li > a {
-  padding: 5px 12px;
   color: #666666;
 }
 .affix > ul > li.active:last-child {
@@ -760,9 +767,6 @@ body .toc{
 .affix > ul > li.active > a:before {
   color: #337ab7;
   font-weight: bold;
-}
-.affix ul ul > li > a {
-  padding: 2px 15px;
 }
 .affix ul > li > a:before,
 .affix ul ul {
@@ -1100,6 +1104,11 @@ div.embeddedvideo iframe {
 .api-infra .entity ul {
   padding-left: 1.15rem;
   list-style: disc;
+}
+
+.api-infra .toc ul {
+  font-size: 14px;
+  line-height: 17px;
 }
 
 .api-infra h4 {

@@ -144,7 +144,11 @@ a[id]:not([href]) {
   border-bottom: 1px solid #e4e2e2;
   line-height: 1.6875rem;
   padding-bottom: 0.75rem;
-  margin: 3rem 0 1rem;
+  margin: 2rem 0 1rem;
+}
+
+.api-infra .md-content-wrapper #_content .entity h5.propertyValue {
+  margin-bottom: 1.5rem;
 }
 
 .docs-infra.api-infra .md-content-wrapper #_content .entity h6 + h6 {
