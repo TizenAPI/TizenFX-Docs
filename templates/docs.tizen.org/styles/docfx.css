@@ -674,7 +674,7 @@ body .toc{
   color: #1e242d;
 }
 .toc-filter > input::placeholder {
-  color: #1e242d;
+  color: #c5c5c5;
 }
 .toc-filter > input:focus {
   outline: 0;
