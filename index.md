@@ -24,37 +24,37 @@ The following table specifies the API Level supported by each version of the Tiz
         </thead>
         <tbody>
             <tr>
-                <td style="text-align:center"><a href="./API9/">API Level 9</a></td>
+                <td style="text-align:center"><a href="./API9/api/">API Level 9</a></td>
                 <td style="text-align:center">tizen90</td>
                 <td style="text-align:center">Tizen vNext</td>
                 <td style="text-align:center"><a href="https://www.nuget.org/packages/Tizen.NET/"><img src="https://img.shields.io/nuget/v/Tizen.NET.API9.svg" alt="api9_nuget"></a></td>
             </tr>
             <tr>
-                <td style="text-align:center"><a href="./API8/">API Level 8</a></td>
+                <td style="text-align:center"><a href="./API8/api/">API Level 8</a></td>
                 <td style="text-align:center">tizen80</td>
                 <td style="text-align:center">Tizen 6.0 M2</td>
                 <td style="text-align:center"><a href="https://www.nuget.org/packages/Tizen.NET/"><img src="https://img.shields.io/nuget/v/Tizen.NET.API8.svg" alt="api8_nuget"></a></td>
             </tr>
             <tr>
-                <td style="text-align:center"><a href="./API7/">API Level 7</a></td>
+                <td style="text-align:center"><a href="./API7/api/">API Level 7</a></td>
                 <td style="text-align:center">tizen70</td>
                 <td style="text-align:center">Tizen 5.5 M3</td>
                 <td style="text-align:center"><a href="https://www.nuget.org/packages/Tizen.NET/"><img src="https://img.shields.io/nuget/v/Tizen.NET.API7.svg" alt="api7_nuget"></a></td>
             </tr>
             <tr>
-                <td style="text-align:center"><a href="./API6/">API Level 6</a></td>
+                <td style="text-align:center"><a href="./API6/api/">API Level 6</a></td>
                 <td style="text-align:center">tizen60</td>
                 <td style="text-align:center">Tizen 5.5 M2</td>
                 <td style="text-align:center"><a href="https://www.nuget.org/packages/Tizen.NET/"><img src="https://img.shields.io/nuget/v/Tizen.NET.API6.svg" alt="api6_nuget"></a></td>
             </tr>
             <tr>
-                <td style="text-align:center"><a href="./API5/">API Level 5</a></td>
+                <td style="text-align:center"><a href="./API5/api/">API Level 5</a></td>
                 <td style="text-align:center">tizen50</td>
                 <td style="text-align:center">Tizen 5.0 M2</td>
                 <td style="text-align:center"><a href="https://www.nuget.org/packages/Tizen.NET/"><img src="https://img.shields.io/nuget/v/Tizen.NET.API5.svg" alt="api5_nuget"></a></td>
             </tr>
             <tr>
-                <td style="text-align:center"><a href="./API4/">API Level 4</a></td>
+                <td style="text-align:center"><a href="./API4/api/">API Level 4</a></td>
                 <td style="text-align:center">tizen40</td>
                 <td style="text-align:center">Tizen 4.0 M2</td>
                 <td style="text-align:center"><a href="https://www.nuget.org/packages/Tizen.NET/"><img src="https://img.shields.io/nuget/v/Tizen.NET.API4.svg" alt="api4_nuget"></a></td>
