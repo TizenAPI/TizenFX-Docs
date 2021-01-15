@@ -301,5 +301,15 @@ a[id]:not([href]) {
     left: 0;
     width: 100%;
     background: #fff;
+    padding: 0;
+  }
+
+  .sidetoggle.in {
+    height: calc(100vh - 80px);
+  }
+
+  .sidetoggle.in .sidetoc {
+    position: fixed;
+    top: 255px;
   }
 }
