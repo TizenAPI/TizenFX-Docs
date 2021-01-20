@@ -17,12 +17,14 @@
   </span>
   {{/sourceurl}}
   {{/_disableContribution}}
+  {{#obsolete}}
+  <h4 id="{{id}}" data-uid="{{uid}}" class="obsolete"><span class="obsolete-content-wrapper">{{name.0.value}}</span></h4>
+  {{/obsolete}}
+  {{^obsolete}}
   <h4 id="{{id}}" data-uid="{{uid}}">{{name.0.value}}</h4>
+  {{/obsolete}}
   <section>
     {{{summary}}}
-    {{#obsolete}}
-      <div class="markdown obsolete" data-id="{{id}}">{{{obsolete}}}</div>
-    {{/obsolete}}
   </section>
 </div>
 <div class="markdown level1 conceptual">{{{conceptual}}}</div>

@@ -1,65 +1,65 @@
 {{!Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE file in the project root for full license information.}}
 {{#inPackage}}
 <span class="entity-type">Package</span>
-{{name.0.value}}
+<span class="entity-name"><span class="obsolete-content-wrapper">{{name.0.value}}</span></span>
 {{/inPackage}}
 {{#inNamespace}}
 <span class="entity-type">Namespace</span>
-<span id="namespace">{{name.0.value}}</span>
+<span id="namespace" class="entity-name"><span class="obsolete-content-wrapper">{{name.0.value}}</span></span>
 {{/inNamespace}}
 {{#inClass}}
 <span class="entity-type">Class</span>
-{{name.0.value}}
+<span class="entity-name"><span class="obsolete-content-wrapper">{{name.0.value}}</span></span>
 {{/inClass}}
 {{#inStruct}}
 <span class="entity-type">Struct</span>
-{{name.0.value}}
+<span class="entity-name"><span class="obsolete-content-wrapper">{{name.0.value}}</span></span>
 {{/inStruct}}
 {{#inInterface}}
 <span class="entity-type">Interface</span>
-{{name.0.value}}
+<span class="entity-name"><span class="obsolete-content-wrapper">{{name.0.value}}</span></span>
 {{/inInterface}}
 {{#inEnum}}
 <span class="entity-type">Enum</span>
-{{name.0.value}}
+<span class="entity-name"><span class="obsolete-content-wrapper">{{name.0.value}}</span></span>
 {{/inEnum}}
 {{#inDelegate}}
 <span class="entity-type">Delegate</span>
-{{name.0.value}}
+<span class="entity-name"><span class="obsolete-content-wrapper">{{name.0.value}}</span></span>
 {{/inDelegate}}
 {{#inConstructor}}
 <span class="entity-type">Constructor</span>
-{{name.0.value}}
+<span class="entity-name"><span class="obsolete-content-wrapper">{{name.0.value}}</span></span>
 {{/inConstructor}}
 {{#inField}}
 <span class="entity-type">Field</span>
-{{name.0.value}}
+<span class="entity-name"><span class="obsolete-content-wrapper">{{name.0.value}}</span></span>
 {{/inField}}
 {{#inProperty}}
 <span class="entity-type">Property</span>
-{{name.0.value}}
+<span class="entity-name"><span class="obsolete-content-wrapper">{{name.0.value}}</span></span>
 {{/inProperty}}
 {{#inMethod}}
 <span class="entity-type">Method </span>
-{{name.0.value}}
+<span class="entity-name"><span class="obsolete-content-wrapper">{{name.0.value}}</span></span>
 {{/inMethod}}
 {{#inEvent}}
 <span class="entity-type">Event</span>
-{{name.0.value}}
+<span class="entity-name"><span class="obsolete-content-wrapper">{{name.0.value}}</span></span>
 {{/inEvent}}
 {{#inOperator}}
 <span class="entity-type">Operator</span>
-{{name.0.value}}
+<span class="entity-name"><span class="obsolete-content-wrapper">{{name.0.value}}</span></span>
 {{/inOperator}}
 {{#inEii}}
 <span class="entity-type">Explict Interface Implementation </span>
-{{name.0.value}}
+<span class="entity-name"><span class="obsolete-content-wrapper">{{name.0.value}}</span></span>
 {{/inEii}}
 {{#inVariable}}
 <span class="entity-type">Variable</span>
-{{name.0.value}}
+<span class="entity-name"><span class="obsolete-content-wrapper">{{name.0.value}}</span></span>
 {{/inVariable}}
 {{#inTypeAlias}}
 <span class="entity-type">Type Alias</span>
-{{name.0.value}}
+<span class="entity-name"><span class="obsolete-content-wrapper">{{name.0.value}}</span></span>
 {{/inTypeAlias}}

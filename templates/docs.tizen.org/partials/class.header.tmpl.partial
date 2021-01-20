@@ -2,17 +2,19 @@
 <div class="entity">{{!Start of entity wrapper}}
 
 <div class="entity-header w-100 d-flex justify-content-between">
-  <h1 id="{{id}}" data-uid="{{uid}}" class="mt-0 text-break">{{>partials/entity-title}}</h1>
-    {{^_disableContribution}}
-      {{#sourceurl}}
-      <div class="contribution align-self-end">
-      <a href="{{sourceurl}}" class="contribution-link">{{__global.viewSource}}</a>
-      </div>
-      {{/sourceurl}}
-    {{/_disableContribution}}
   {{#obsolete}}
-  <div class="markdown obsolete" data-id="{{id}}">{{{obsolete}}}</div>
+  <h1 id="{{id}}" data-uid="{{uid}}" class="mt-0 text-break obsolete">{{>partials/entity-title}}</h1>
   {{/obsolete}}
+  {{^obsolete}}
+  <h1 id="{{id}}" data-uid="{{uid}}" class="mt-0 text-break">{{>partials/entity-title}}</h1>
+  {{/obsolete}}
+  {{^_disableContribution}}
+    {{#sourceurl}}
+    <div class="contribution align-self-end">
+      <a href="{{sourceurl}}" class="contribution-link">{{__global.viewSource}}</a>
+    </div>
+    {{/sourceurl}}
+  {{/_disableContribution}}
 </div>
 <h3 class="hidden-anchor m-0" id="definition"><a href="#definition"></a>Definition</h3>
 

@@ -3,10 +3,6 @@
 {{>partials/class.header}}
 
 {{#children}}
-{{#obsolete}}
-<div class="markdown obsolete" data-id="{{id}}">{{{obsolete}}}</div>
-{{/obsolete}}
-<h2 id="{{id}}">{{>partials/classSubtitle}}</h2>
 <table class="table">
   <thead>
     <tr>
