@@ -10,16 +10,16 @@ $(function () {
 
   const apiVersion = $('meta[name="version"]').attr('content');
 
-  const readyForDropdownApi = setInterval(function() {
+  const readyForDropdownVersionsApi = setInterval(function() {
     const $menu = $('#dropdownApiVersionMenu');
     if ($menu.length) {
-      clearInterval(readyForDropdownApi);
-      createDropdownMenuItems($menu);
-      registerDropdownEvents($menu);
+      clearInterval(readyForDropdownVersionsApi);
+      createDropdownVersionsMenuItems($menu);
+      registerDropdownVersionsEvents($menu);
     }
   }, 10);
 
-  function createDropdownMenuItems($menu) {
+  function createDropdownVersionsMenuItems($menu) {
     Object.keys(apiVersions).sort().reverse().forEach(function(version) {
       const $item = $('<a class="dropdown-item" data-value="' + version + '">' + apiVersions[version] + '</a>');
 
@@ -32,7 +32,7 @@ $(function () {
     $('#dropdownApiVersionButton').html(apiVersions[apiVersion]);
   }
 
-  function registerDropdownEvents($menu) {
+  function registerDropdownVersionsEvents($menu) {
     $menu.find('a').each(function () {
       $(this).on('click', function (e) {
         const $target = $(e.target);
@@ -74,5 +74,31 @@ $(function () {
       });
     }
   }, 10);
+
+  const readyForDropdownApi = setInterval(function() {
+    const $menu = $('#dropdownApiMenu');
+    if ($menu.length) {
+      clearInterval(readyForDropdownApi);
+
+      if (apiList) {
+        createDropdownApiMenuItems($menu, apiList);
+      }
+      
+    }
+  }, 10);
+
+  function createDropdownApiMenuItems($menu, apiList) {
+    $menu.empty();
+    apiList.forEach(function(api) {
+      const $item = $('<a class="dropdown-item" href="' + api.dropdownUrl + '">' + api.dropdownName + '</a>');
+
+      if (location.href.indexOf(api.rootUrl) !== -1) {
+        $item.addClass('active');
+        $('#dropdownApiButton').html(api.dropdownName);
+      }
+
+      $menu.append($item);
+    });
+  }
 
 });
