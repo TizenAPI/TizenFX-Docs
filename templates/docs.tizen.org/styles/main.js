@@ -40,7 +40,9 @@ $(function () {
         $menu.find('.active').removeClass('active');
         $target.addClass('active');
 
-        const newURL = window.location.href.replace(/\/API\d+\//, '/' + $target.data('value') + '/');
+        const locationSplitted = window.location.href.split('/');
+        locationSplitted[locationSplitted.length - 3] = $target.data('value');
+        const newURL = locationSplitted.join('/');
 
         $('#dropdownApiVersionButton').html(apiVersions[$target.data('value')]);
 
