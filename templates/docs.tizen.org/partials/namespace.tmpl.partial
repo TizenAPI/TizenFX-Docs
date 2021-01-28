@@ -10,12 +10,17 @@
   <h2 id="{{id}}">{{>partials/namespaceSubtitle}}</h2>
   {{#children}}
     <div class="described-list-item row ml-0 mr-0">
-      {{#obsolete}}
-      <h4 class="col col-12 col-md-4 obsolete"><span class="obsolete-content-wrapper"><xref uid="{{uid}}" altProperty="fullName" displayProperty="name"/></span></h4>
-      {{/obsolete}}
-      {{^obsolete}}
-       <h4 class="col col-12 col-md-4"><xref uid="{{uid}}" altProperty="fullName" displayProperty="name"/></h4>
-      {{/obsolete}}
+      <h4 class="col col-12 col-md-4">
+        {{#obsolete}}
+        <span class="obsolete-content-wrapper">
+          <xref uid="{{uid}}" altProperty="fullName" displayProperty="name"/>
+        </span>
+        <span class="obsolete-img" title="{{{obsolete}}}"></span>
+        {{/obsolete}}
+        {{^obsolete}}
+        <xref uid="{{uid}}" altProperty="fullName" displayProperty="name"/>
+        {{/obsolete}}
+      </h4>
       <section class="col col-12 col-md-8">{{{summary}}}</section>
     </div>
   {{/children}}
