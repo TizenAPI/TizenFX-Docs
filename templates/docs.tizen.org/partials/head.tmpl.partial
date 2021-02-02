@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="{{_rel}}styles/main.css">
   <link rel="stylesheet" href="{{_rel}}styles/tizen.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <meta property="docfx:navrel" content="{{_navRel}}">
+  {{^_disableNavbar}}<meta property="docfx:navrel" content="{{_navRel}}">{{/_disableNavbar}}
   <meta property="docfx:tocrel" content="{{_tocRel}}">
   {{#_noindex}}<meta name="searchOption" content="noindex">{{/_noindex}}
   {{#_enableSearch}}<meta property="docfx:rel" content="{{_rel}}">{{/_enableSearch}}
