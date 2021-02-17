@@ -82,8 +82,8 @@ $(function () {
     if ($menu.length) {
       clearInterval(readyForDropdownApi);
 
-      if (apiList) {
-        createDropdownApiMenuItems($menu, apiList);
+      if (window.apiList) {
+        createDropdownApiMenuItems($menu, window.apiList);
       }
       
     }
