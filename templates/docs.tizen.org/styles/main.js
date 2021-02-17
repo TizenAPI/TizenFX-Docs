@@ -66,8 +66,8 @@ $(function () {
     var items = $('#affix ul .bs-docs-sidenav a');
     if (items.length > 0) {
       clearInterval(readyForAffix);
-      var obsoleteIds = $.map($('div .obsolete'), function(item) {
-        return '#' + $(item).data('id');
+      var obsoleteIds = $.map($('span.obsolete-content-wrapper').parent('h4[id]'), function(item) {
+        return '#' + $(item).attr('id');
       });
       $.each(items, function(idx, item) {
         if (obsoleteIds.indexOf(item.hash) >= 0) {
