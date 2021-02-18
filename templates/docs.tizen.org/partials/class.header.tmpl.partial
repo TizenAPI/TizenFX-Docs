@@ -2,7 +2,12 @@
 <div class="entity">{{!Start of entity wrapper}}
 
 <div class="entity-header w-100 d-flex justify-content-between">
+  {{^obsolete}}
   <h1 id="{{id}}" data-uid="{{uid}}" class="mt-0 text-break">{{>partials/entity-title}}</h1>
+  {{/obsolete}}
+  {{#obsolete}}
+  <h1 id="{{id}}" data-uid="{{uid}}" data-obsolete="{{obsolete}}" class="mt-0 text-break obsolete">{{>partials/entity-title}}</h1>
+  {{/obsolete}}
   {{^_disableContribution}}
     {{#sourceurl}}
     <div class="contribution align-self-end">

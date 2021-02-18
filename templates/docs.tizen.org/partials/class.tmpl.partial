@@ -17,15 +17,12 @@
   </span>
   {{/sourceurl}}
   {{/_disableContribution}}
-  <h4 id="{{id}}" data-uid="{{uid}}">
-    {{#obsolete}}
-    <span class="obsolete-content-wrapper">{{name.0.value}}</span>
-    <span class="obsolete-img" title="{{{obsolete}}}"></span>
-    {{/obsolete}}
-    {{^obsolete}}
-    {{name.0.value}}
-    {{/obsolete}}
-  </h4>
+  {{^obsolete}}
+  <h4 id="{{id}}" data-uid="{{uid}}">{{name.0.value}}</h4>
+  {{/obsolete}}
+  {{#obsolete}}
+  <h4 id="{{id}}" data-uid="{{uid}}" data-obsolete="{{obsolete}}" class="obsolete">{{name.0.value}}</h4>
+  {{/obsolete}}
   <section>
     {{{summary}}}
   </section>

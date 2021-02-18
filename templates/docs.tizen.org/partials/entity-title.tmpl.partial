@@ -1,177 +1,65 @@
 {{!Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE file in the project root for full license information.}}
 {{#inPackage}}
 <span class="entity-type">Package</span>
-<span class="entity-name">
-  {{#obsolete}}
-  <span class="obsolete-content-wrapper">{{name.0.value}}</span><span class="obsolete-img" title="{{{obsolete}}}"></span>
-  {{/obsolete}}
-  {{^obsolete}}
-  {{name.0.value}}
-  {{/obsolete}}
-</span>
+{{name.0.value}}
 {{/inPackage}}
 {{#inNamespace}}
 <span class="entity-type">Namespace</span>
-<span id="namespace" class="entity-name">
-  {{#obsolete}}
-  <span class="obsolete-content-wrapper">{{name.0.value}}</span><span class="obsolete-img" title="{{{obsolete}}}"></span>
-  {{/obsolete}}
-  {{^obsolete}}
-  {{name.0.value}}
-  {{/obsolete}}
-</span>
+<span id="namespace">{{name.0.value}}</span>
 {{/inNamespace}}
 {{#inClass}}
 <span class="entity-type">Class</span>
-<span class="entity-name">
-  {{#obsolete}}
-  <span class="obsolete-content-wrapper">{{name.0.value}}</span><span class="obsolete-img" title="{{{obsolete}}}"></span>
-  {{/obsolete}}
-  {{^obsolete}}
-  {{name.0.value}}
-  {{/obsolete}}
-</span>
+{{name.0.value}}
 {{/inClass}}
 {{#inStruct}}
 <span class="entity-type">Struct</span>
-<span class="entity-name">
-  {{#obsolete}}
-  <span class="obsolete-content-wrapper">{{name.0.value}}</span><span class="obsolete-img" title="{{{obsolete}}}"></span>
-  {{/obsolete}}
-  {{^obsolete}}
-  {{name.0.value}}
-  {{/obsolete}}
-</span>
+{{name.0.value}}
 {{/inStruct}}
 {{#inInterface}}
 <span class="entity-type">Interface</span>
-<span class="entity-name">
-  {{#obsolete}}
-  <span class="obsolete-content-wrapper">{{name.0.value}}</span><span class="obsolete-img" title="{{{obsolete}}}"></span>
-  {{/obsolete}}
-  {{^obsolete}}
-  {{name.0.value}}
-  {{/obsolete}}
-</span>
+{{name.0.value}}
 {{/inInterface}}
 {{#inEnum}}
 <span class="entity-type">Enum</span>
-<span class="entity-name">
-  {{#obsolete}}
-  <span class="obsolete-content-wrapper">{{name.0.value}}</span><span class="obsolete-img" title="{{{obsolete}}}"></span>
-  {{/obsolete}}
-  {{^obsolete}}
-  {{name.0.value}}
-  {{/obsolete}}
-</span>
+{{name.0.value}}
 {{/inEnum}}
 {{#inDelegate}}
 <span class="entity-type">Delegate</span>
-<span class="entity-name">
-  {{#obsolete}}
-  <span class="obsolete-content-wrapper">{{name.0.value}}</span><span class="obsolete-img" title="{{{obsolete}}}"></span>
-  {{/obsolete}}
-  {{^obsolete}}
-  {{name.0.value}}
-  {{/obsolete}}
-</span>
+{{name.0.value}}
 {{/inDelegate}}
 {{#inConstructor}}
 <span class="entity-type">Constructor</span>
-<span class="entity-name">
-  {{#obsolete}}
-  <span class="obsolete-content-wrapper">{{name.0.value}}</span><span class="obsolete-img" title="{{{obsolete}}}"></span>
-  {{/obsolete}}
-  {{^obsolete}}
-  {{name.0.value}}
-  {{/obsolete}}
-</span>
+{{name.0.value}}
 {{/inConstructor}}
 {{#inField}}
 <span class="entity-type">Field</span>
-<span class="entity-name">
-  {{#obsolete}}
-  <span class="obsolete-content-wrapper">{{name.0.value}}</span><span class="obsolete-img" title="{{{obsolete}}}"></span>
-  {{/obsolete}}
-  {{^obsolete}}
-  {{name.0.value}}
-  {{/obsolete}}
-</span>
+{{name.0.value}}
 {{/inField}}
 {{#inProperty}}
 <span class="entity-type">Property</span>
-<span class="entity-name">
-  {{#obsolete}}
-  <span class="obsolete-content-wrapper">{{name.0.value}}</span><span class="obsolete-img" title="{{{obsolete}}}"></span>
-  {{/obsolete}}
-  {{^obsolete}}
-  {{name.0.value}}
-  {{/obsolete}}
-</span>
+{{name.0.value}}
 {{/inProperty}}
 {{#inMethod}}
 <span class="entity-type">Method </span>
-<span class="entity-name">
-  {{#obsolete}}
-  <span class="obsolete-content-wrapper">{{name.0.value}}</span><span class="obsolete-img" title="{{{obsolete}}}"></span>
-  {{/obsolete}}
-  {{^obsolete}}
-  {{name.0.value}}
-  {{/obsolete}}
-</span>
+{{name.0.value}}
 {{/inMethod}}
 {{#inEvent}}
 <span class="entity-type">Event</span>
-<span class="entity-name">
-  {{#obsolete}}
-  <span class="obsolete-content-wrapper">{{name.0.value}}</span><span class="obsolete-img" title="{{{obsolete}}}"></span>
-  {{/obsolete}}
-  {{^obsolete}}
-  {{name.0.value}}
-  {{/obsolete}}
-</span>
+{{name.0.value}}
 {{/inEvent}}
 {{#inOperator}}
 <span class="entity-type">Operator</span>
-<span class="entity-name">
-  {{#obsolete}}
-  <span class="obsolete-content-wrapper">{{name.0.value}}</span><span class="obsolete-img" title="{{{obsolete}}}"></span>
-  {{/obsolete}}
-  {{^obsolete}}
-  {{name.0.value}}
-  {{/obsolete}}
-</span>
+{{name.0.value}}
 {{/inOperator}}
 {{#inEii}}
 <span class="entity-type">Explict Interface Implementation </span>
-<span class="entity-name">
-  {{#obsolete}}
-  <span class="obsolete-content-wrapper">{{name.0.value}}</span><span class="obsolete-img" title="{{{obsolete}}}"></span>
-  {{/obsolete}}
-  {{^obsolete}}
-  {{name.0.value}}
-  {{/obsolete}}
-</span>
+{{name.0.value}}
 {{/inEii}}
 {{#inVariable}}
 <span class="entity-type">Variable</span>
-<span class="entity-name">
-  {{#obsolete}}
-  <span class="obsolete-content-wrapper">{{name.0.value}}</span><span class="obsolete-img" title="{{{obsolete}}}"></span>
-  {{/obsolete}}
-  {{^obsolete}}
-  {{name.0.value}}
-  {{/obsolete}}
-</span>
+{{name.0.value}}
 {{/inVariable}}
 {{#inTypeAlias}}
 <span class="entity-type">Type Alias</span>
-<span class="entity-name">
-  {{#obsolete}}
-  <span class="obsolete-content-wrapper">{{name.0.value}}</span><span class="obsolete-img" title="{{{obsolete}}}"></span>
-  {{/obsolete}}
-  {{^obsolete}}
-  {{name.0.value}}
-  {{/obsolete}}
-</span>
+{{name.0.value}}
 {{/inTypeAlias}}
