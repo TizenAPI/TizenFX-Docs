@@ -1,23 +1,32 @@
 {{!Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE file in the project root for full license information.}}
 
 {{>partials/class.header}}
+
 {{#children}}
-<h3 id="{{id}}">{{>partials/classSubtitle}}</h3>
+<h2 id="{{id}}">{{>partials/classSubtitle}}</h2>
 {{#children}}
-{{^_disableContribution}}
-{{#sourceurl}}
-<span class="small pull-right mobile-hide">
-  <a href="{{sourceurl}}">{{__global.viewSource}}</a>
-</span>{{/sourceurl}}
-{{/_disableContribution}}
+
 {{#overload}}
 <a id="{{id}}" data-uid="{{uid}}"></a>
 {{/overload}}
-<h4 id="{{id}}" data-uid="{{uid}}">{{name.0.value}}</h4>
-{{#obsolete}}
-<div class="markdown obsolete" data-id="{{id}}">{{{obsolete}}}</div>
-{{/obsolete}}
-<div class="markdown level1 summary">{{{summary}}}</div>
+<div class="entity-child">
+  {{^_disableContribution}}
+  {{#sourceurl}}
+  <span class="pull-right mobile-hide view-source">
+    <a href="{{sourceurl}}">{{__global.viewSource}}</a>
+  </span>
+  {{/sourceurl}}
+  {{/_disableContribution}}
+  {{^obsolete}}
+  <h4 id="{{id}}" data-uid="{{uid}}">{{name.0.value}}</h4>
+  {{/obsolete}}
+  {{#obsolete}}
+  <h4 id="{{id}}" data-uid="{{uid}}" data-obsolete="{{obsolete}}" class="obsolete">{{name.0.value}}</h4>
+  {{/obsolete}}
+  <section>
+    {{{summary}}}
+  </section>
+</div>
 <div class="markdown level1 conceptual">{{{conceptual}}}</div>
 <h5 class="decalaration">{{__global.declaration}}</h5>
 {{#syntax}}
@@ -26,7 +35,7 @@
 </div>
 {{#parameters.0}}
 <h5 class="parameters">{{__global.parameters}}</h5>
-<table class="table table-bordered table-striped table-condensed">
+<table class="table">
   <thead>
     <tr>
       <th>{{__global.type}}</th>
@@ -49,7 +58,7 @@
 {{/parameters.0}}
 {{#return}}
 <h5 class="returns">{{__global.returns}}</h5>
-<table class="table table-bordered table-striped table-condensed">
+<table class="table">
   <thead>
     <tr>
       <th>{{__global.type}}</th>
@@ -66,7 +75,7 @@
 {{/return}}
 {{#typeParameters.0}}
 <h5 class="typeParameters">{{__global.typeParameters}}</h5>
-<table class="table table-bordered table-striped table-condensed">
+<table class="table">
   <thead>
     <tr>
       <th>{{__global.name}}</th>
@@ -87,7 +96,7 @@
 {{/typeParameters.0}}
 {{#fieldValue}}
 <h5 class="fieldValue">{{__global.fieldValue}}</h5>
-<table class="table table-bordered table-striped table-condensed">
+<table class="table">
   <thead>
     <tr>
       <th>{{__global.type}}</th>
@@ -104,7 +113,7 @@
 {{/fieldValue}}
 {{#propertyValue}}
 <h5 class="propertyValue">{{__global.propertyValue}}</h5>
-<table class="table table-bordered table-striped table-condensed">
+<table class="table">
   <thead>
     <tr>
       <th>{{__global.type}}</th>
@@ -121,7 +130,7 @@
 {{/propertyValue}}
 {{#eventType}}
 <h5 class="eventType">{{__global.eventType}}</h5>
-<table class="table table-bordered table-striped table-condensed">
+<table class="table">
   <thead>
     <tr>
       <th>{{__global.type}}</th>
@@ -153,7 +162,7 @@
 {{/example}}
 {{#exceptions.0}}
 <h5 class="exceptions">{{__global.exceptions}}</h5>
-<table class="table table-bordered table-striped table-condensed">
+<table class="table">
   <thead>
     <tr>
       <th>{{__global.type}}</th>
@@ -173,8 +182,8 @@
 </table>
 {{/exceptions.0}}
 {{#seealso.0}}
-<h5 id="{{id}}_seealso">{{__global.seealso}}</h5>
 <div class="seealso">
+  <h5 id="{{id}}_seealso">{{__global.seealso}}</h5>
 {{/seealso.0}}
 {{#seealso}}
   {{#isCref}}
@@ -207,12 +216,10 @@
 <h6><strong>{{__global.postcondition}}</strong>: {{{postcondition}}}</h6>
 {{/postcondition}}
 
-<div style="margin-bottom: 15px"></div>
-
 {{/children}}
 {{/children}}
 {{#implements.0}}
-<h3 id="implements">{{__global.implements}}</h3>
+<h2 id="implements">{{__global.implements}}</h2>
 {{/implements.0}}
 {{#implements}}
 <div>
@@ -252,3 +259,4 @@
 {{#seealso.0}}
 </div>
 {{/seealso.0}}
+</div>{{!End of entity wrapper}}

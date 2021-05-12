@@ -1,9 +1,0 @@
-# YamlMime:TableOfContent
-- name: API Reference
-  topicHref: stable/api/
-- name: Guides
-  topicHref: https://docs.tizen.org/application/dotnet/
-- name: Samples
-  topicHref: https://github.com/Samsung/Tizen-CSharp-Samples/
-- name: Github
-  topicHref: https://github.com/Samsung/TizenFX
