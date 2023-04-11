@@ -6,7 +6,7 @@
 * <xref:Tizen>
 * <xref:Tizen.Account.AccountManager>
 * <xref:Tizen.Account.FidoClient>
-* <xref:Tizen.Account.OAuth2>
+* <xref:Tizen.Account.OAuth2> (obsolete)
 * <xref:Tizen.Account.SyncManager>
 * <xref:Tizen.Applications>
 * <xref:Tizen.Applications.AttachPanel>
@@ -30,12 +30,13 @@
 * <xref:Tizen.Content.MediaContent>
 * <xref:Tizen.Content.MimeType>
 * <xref:Tizen.Context.AppHistory>
+* <xref:Tizen.Data.Tdbc>
 * <xref:Tizen.Internals.Errors>
 * <xref:Tizen.Location>
 * <xref:Tizen.Location.Geofence>
 * <xref:Tizen.MachineLearning.Inference>
 * <xref:Tizen.MachineLearning.Train>
-* <xref:Tizen.Maps>
+* <xref:Tizen.Maps> (obsolete)
 * <xref:Tizen.Messaging.Email>
 * <xref:Tizen.Messaging.Messages>
 * <xref:Tizen.Messaging.Push>
@@ -88,4 +89,4 @@
 * <xref:Tizen.Uix.TtsEngine>
 * <xref:Tizen.Uix.VoiceControl>
 * <xref:Tizen.Uix.VoiceControlManager>
-* <xref:Tizen.WebView>
+* <xref:Tizen.WebView> (obsolete)
