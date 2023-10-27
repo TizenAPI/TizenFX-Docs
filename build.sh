@@ -86,7 +86,7 @@ restore_repos() {
 
 build_docs() {
   echo "Use $DOCFX_FILE"
-  docfx metadata $DOCFX_FILE || echo "Ignore errors..."
+  docfx metadata $DOCFX_FILE
   docfx build $DOCFX_FILE || echo "Ignore errors..."
   cp -f $COMMIT_HASH_FILE $SITE_DIR
 
