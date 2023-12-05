@@ -5,6 +5,16 @@
         {
           "files": [ "*/*.csproj" ],
           "exclude": [ "**/obj/**", "**/bin/**" ],
+          "src": "repos/API12/src"
+        }
+      ],
+      "dest": "obj/API12/api"
+    },
+    {
+      "src": [
+        {
+          "files": [ "*/*.csproj" ],
+          "exclude": [ "**/obj/**", "**/bin/**" ],
           "src": "repos/API11/src"
         }
       ],
@@ -85,7 +95,7 @@
         {
           "files": [ "*/*.csproj" ],
           "exclude": [ "**/obj/**", "**/bin/**" ],
-          "src": "repos/API9/internals/src"
+          "src": "repos/API12/internals/src"
         }
       ],
       "dest": "obj/internals/api"
@@ -93,6 +103,20 @@
   ],
   "build": {
     "content": [
+      {
+        "version": "API12",
+        "files": [ "**/*.yml" ],
+        "src": "obj/API12",
+        "dest": "API12",
+        "rootTocPath": "toc.html"
+      },
+	        {
+        "version": "API12",
+        "files": [ "**/*.{yml,md}" ],
+        "src": "specs/API12",
+        "dest": "API12",
+        "rootTocPath": "toc.html"
+      },
       {
         "version": "API11",
         "files": [ "**/*.yml" ],
@@ -215,7 +239,7 @@
       {
         "version": "internals",
         "files": [ "**/*.{yml,md}" ],
-        "src": "repos/API10/internals/docs",
+        "src": "repos/API12/internals/docs",
         "dest": "internals",
         "rootTocPath": "toc.html"
       },
@@ -224,6 +248,11 @@
       }
     ],
     "overwrite": [
+      {
+        "version": "API12",
+        "files": "*/doc/api/**.md",
+        "src": "repos/API12/src"
+      },
       {
         "version": "API11",
         "files": "*/doc/api/**.md",
@@ -267,7 +296,7 @@
       {
         "version": "internals",
         "files": "*/doc/api/**.md",
-        "src": "repos/API9/internals/src"
+        "src": "repos/API12/internals/src"
       }
     ],
     "resource": [
@@ -290,6 +319,7 @@
         "_baseUrl": "https://samsung.github.io/TizenFX/master/",
         "_enableSearch" : "true"
     },
+    "xref": [ "https://learn.microsoft.com/en-us/dotnet/.xrefmap.json" ],
     "xrefService": [ "https://xref.docs.microsoft.com/query?uid={uid}" ],
     "postProcessors": ["ExtractSearchIndex"],
     "noLangKeyword": false,

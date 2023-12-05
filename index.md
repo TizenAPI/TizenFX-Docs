@@ -24,9 +24,15 @@ The following table specifies the API Level supported by each version of the Tiz
         </thead>
         <tbody>
             <tr>
-                <td style="text-align:center"><a href="./API11/api/">API Level 11</a></td>
-                <td style="text-align:center">tizen11.0</td>
+                <td style="text-align:center"><a href="./API12/api/">API Level 12</a></td>
+                <td style="text-align:center">tizen12.0</td>
                 <td style="text-align:center">Tizen vNext</td>
+                <td style="text-align:center"></td>
+            </tr>
+            <tr>
+                <td style="text-align:center"><a href="./API11/api/">API Level 11</a></td>
+                <td style="text-align:center">net6.0-tizen80</td>
+                <td style="text-align:center">Tizen8.0</td>
                 <td style="text-align:center"></td>
             </tr>
             <tr>
