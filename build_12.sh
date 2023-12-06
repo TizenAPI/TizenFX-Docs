@@ -10,8 +10,6 @@ REPO_DIR="$SCRIPT_DIR/repos"
 OBJ_DIR="$SCRIPT_DIR/obj"
 SITE_DIR="$SCRIPT_DIR/_site"
 
-unlimit -a
-
 if [ -z "$DOCFX_FILE" ]; then
   DOCFX_FILE=$SCRIPT_DIR/docfx.json
 fi
