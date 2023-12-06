@@ -319,7 +319,6 @@
         "_baseUrl": "https://samsung.github.io/TizenFX/master/",
         "_enableSearch" : "true"
     },
-    "xref": [ "https://learn.microsoft.com/en-us/dotnet/.xrefmap.json" ],
     "xrefService": [ "https://xref.docs.microsoft.com/query?uid={uid}" ],
     "postProcessors": ["ExtractSearchIndex"],
     "noLangKeyword": false,
