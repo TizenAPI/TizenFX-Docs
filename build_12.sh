@@ -1,9 +1,9 @@
 #!/bin/bash -e
 SCRIPT_DIR=$(dirname $(readlink -f $0))
 
-VERSIONS="API11 API12"
+VERSIONS="API12"
 BRANCH_API12=master
-STABLE="API11"
+STABLE="API12"
 
 GIT_URL="https://github.com/Samsung/TizenFX.git"
 REPO_DIR="$SCRIPT_DIR/repos"
