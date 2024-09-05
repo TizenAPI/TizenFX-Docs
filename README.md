@@ -4,8 +4,8 @@ Building TizenFX API Reference
 
 
 ## Prerequisites
-- .NET Core SDK >= 3.1 : https://dotnet.microsoft.com/download
-- DocFX >= 2.56 : https://dotnet.github.io/docfx/
+- .NET SDK = 6.0.x : https://dotnet.microsoft.com/download/dotnet/6.0
+- DocFX = 2.61.0 : https://github.com/dotnet/docfx
 
 ## Build documents
 ```sh

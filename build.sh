@@ -9,10 +9,9 @@ GIT_URL="https://github.com/Samsung/TizenFX.git"
 REPO_DIR="$SCRIPT_DIR/repos"
 OBJ_DIR="$SCRIPT_DIR/obj"
 SITE_DIR="$SCRIPT_DIR/_site"
-DOCFX_CONFIG_DIR="$SCRIPT_DIR/docfx_config"
 
 if [ -z "$DOCFX_FILE" ]; then
-  DOCFX_FILE=$DOCFX_CONFIG_DIR/docfx.json
+  DOCFX_FILE=$SCRIPT_DIR/docfx.json
 fi
 COMMIT_HASH_FILE=$REPO_DIR/commits
 
@@ -87,9 +86,8 @@ restore_repos() {
 
 build_docs() {
   echo "Use $DOCFX_FILE"
-  cp $DOCFX_FILE .
-  docfx metadata 
-  docfx build || echo "Ignore errors..."
+  docfx metadata $DOCFX_FILE
+  docfx build $DOCFX_FILE || echo "Ignore errors..."
   cp -f $COMMIT_HASH_FILE $SITE_DIR
 
   # generate symlinks
