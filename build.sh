@@ -2,7 +2,7 @@
 SCRIPT_DIR=$(dirname $(readlink -f $0))
 
 VERSIONS="API4 API5 API6 API7 API8 API9 API10 API11 API12 API13"
-BRANCH_API13=master
+BRANCH_API13=main
 STABLE="API12"
 
 GIT_URL="https://github.com/Samsung/TizenFX.git"
