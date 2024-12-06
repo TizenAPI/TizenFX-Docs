@@ -76,6 +76,7 @@
 * <xref:Tizen.Security.SecureRepository>
 * <xref:Tizen.Security.SecureRepository.Crypto>
 * <xref:Tizen.Security.TEEC>
+* <xref:Tizen.Security.WebAuthn>
 * <xref:Tizen.Sensor>
 * <xref:Tizen.System>
 * <xref:Tizen.System.Usb>

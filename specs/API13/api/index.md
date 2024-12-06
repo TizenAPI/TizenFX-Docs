@@ -30,7 +30,7 @@
 * <xref:Tizen.Content.MediaContent>
 * <xref:Tizen.Content.MimeType>
 * <xref:Tizen.Context.AppHistory>
-* <xref:Tizen.core>
+* <xref:Tizen.Core>
 * <xref:Tizen.Data.Tdbc>
 * <xref:Tizen.Internals.Errors>
 * <xref:Tizen.Location>
