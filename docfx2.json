@@ -25,6 +25,86 @@
         {
           "files": [ "*/*.csproj" ],
           "exclude": [ "**/obj/**", "**/bin/**" ],
+          "src": "repos/API11/src"
+        }
+      ],
+      "dest": "obj/API11/api"
+    },
+    {
+      "src": [
+        {
+          "files": [ "*/*.csproj" ],
+          "exclude": [ "**/obj/**", "**/bin/**" ],
+          "src": "repos/API10/src"
+        }
+      ],
+      "dest": "obj/API10/api"
+    },
+    {
+      "src": [
+        {
+          "files": [ "*/*.csproj" ],
+          "exclude": [ "**/obj/**", "**/bin/**" ],
+          "src": "repos/API9/src"
+        }
+      ],
+      "dest": "obj/API9/api"
+    },
+    {
+      "src": [
+        {
+          "files": [ "*/*.csproj" ],
+          "exclude": [ "**/obj/**", "**/bin/**" ],
+          "src": "repos/API8/src"
+        }
+      ],
+      "dest": "obj/API8/api"
+    },
+    {
+      "src": [
+        {
+          "files": [ "*/*.csproj" ],
+          "exclude": [ "**/obj/**", "**/bin/**" ],
+          "src": "repos/API7/src"
+        }
+      ],
+      "dest": "obj/API7/api"
+    },
+    {
+      "src": [
+        {
+          "files": [ "*/*.csproj" ],
+          "exclude": [ "**/obj/**", "**/bin/**" ],
+          "src": "repos/API6/src"
+        }
+      ],
+      "dest": "obj/API6/api"
+    },
+    {
+      "src": [
+        {
+          "files": [ "*/*.csproj" ],
+          "exclude": [ "**/obj/**", "**/bin/**" ],
+          "src": "repos/API5/src"
+        }
+      ],
+      "dest": "obj/API5/api"
+    },
+    {
+      "src": [
+        {
+          "files": [ "*/*.csproj" ],
+          "exclude": [ "**/obj/**", "**/bin/**" ],
+          "src": "repos/API4/src"
+        }
+      ],
+      "dest": "obj/API4/api"
+    },
+    {
+      "src": [
+        {
+          "files": [ "*/*.csproj" ],
+          "exclude": [ "**/obj/**", "**/bin/**" ],
           "src": "repos/API13/internals/src"
         }
       ],
@@ -62,6 +142,118 @@
         "rootTocPath": "toc.html"
       },
       {
+        "version": "API11",
+        "files": [ "**/*.yml" ],
+        "src": "obj/API11",
+        "dest": "API11",
+        "rootTocPath": "toc.html"
+      },
+      {
+        "version": "API11",
+        "files": [ "**/*.{yml,md}" ],
+        "src": "specs/API11",
+        "dest": "API11",
+        "rootTocPath": "toc.html"
+      },
+      {
+        "version": "API10",
+        "files": [ "**/*.yml" ],
+        "src": "obj/API10",
+        "dest": "API10",
+        "rootTocPath": "toc.html"
+      },
+      {
+        "version": "API10",
+        "files": [ "**/*.{yml,md}" ],
+        "src": "specs/API10",
+        "dest": "API10",
+        "rootTocPath": "toc.html"
+      },
+      {
+        "version": "API9",
+        "files": [ "**/*.yml" ],
+        "src": "obj/API9",
+        "dest": "API9",
+        "rootTocPath": "toc.html"
+      },
+      {
+        "version": "API9",
+        "files": [ "**/*.{yml,md}" ],
+        "src": "specs/API9",
+        "dest": "API9",
+        "rootTocPath": "toc.html"
+      },
+      {
+        "version": "API8",
+        "files": [ "**/*.yml" ],
+        "src": "obj/API8",
+        "dest": "API8",
+        "rootTocPath": "toc.html"
+      },
+      {
+        "version": "API8",
+        "files": [ "**/*.{yml,md}" ],
+        "src": "specs/API8",
+        "dest": "API8",
+        "rootTocPath": "toc.html"
+      },
+      {
+        "version": "API7",
+        "files": [ "**/*.yml" ],
+        "src": "obj/API7",
+        "dest": "API7",
+        "rootTocPath": "toc.html"
+      },
+      {
+        "version": "API7",
+        "files": [ "**/*.{yml,md}" ],
+        "src": "specs/API7",
+        "dest": "API7",
+        "rootTocPath": "toc.html"
+      },
+      {
+        "version": "API6",
+        "files": [ "**/*.yml" ],
+        "src": "obj/API6",
+        "dest": "API6",
+        "rootTocPath": "toc.html"
+      },
+      {
+        "version": "API6",
+        "files": [ "**/*.{yml,md}" ],
+        "src": "specs/API6",
+        "dest": "API6",
+        "rootTocPath": "toc.html"
+      },
+      {
+        "version": "API5",
+        "files": [ "**/*.yml" ],
+        "src": "obj/API5",
+        "dest": "API5",
+        "rootTocPath": "toc.html"
+      },
+      {
+        "version": "API5",
+        "files": [ "**/*.{yml,md}" ],
+        "src": "specs/API5",
+        "dest": "API5",
+        "rootTocPath": "toc.html"
+      },
+      {
+        "version": "API4",
+        "files": [ "**/*.yml" ],
+        "src": "obj/API4",
+        "dest": "API4",
+        "rootTocPath": "toc.html"
+      },
+      {
+        "version": "API4",
+        "files": [ "**/*.{yml,md}" ],
+        "src": "specs/API4",
+        "dest": "API4",
+        "rootTocPath": "toc.html"
+      },
+      {
         "version": "internals",
         "files": [ "**/*.yml" ],
         "src": "obj/internals",
@@ -89,6 +281,46 @@
         "version": "API12",
         "files": "*/doc/api/**.md",
         "src": "repos/API12/src"
+      },
+      {
+        "version": "API11",
+        "files": "*/doc/api/**.md",
+        "src": "repos/API11/src"
+      },
+      {
+        "version": "API10",
+        "files": "*/doc/api/**.md",
+        "src": "repos/API10/src"
+      },
+      {
+        "version": "API9",
+        "files": "*/doc/api/**.md",
+        "src": "repos/API9/src"
+      },
+      {
+        "version": "API8",
+        "files": "*/doc/api/**.md",
+        "src": "repos/API8/src"
+      },
+      {
+        "version": "API7",
+        "files": "*/doc/api/**.md",
+        "src": "repos/API7/src"
+      },
+      {
+        "version": "API6",
+        "files": "*/doc/api/**.md",
+        "src": "repos/API6/src"
+      },
+      {
+        "version": "API5",
+        "files": "*/doc/api/**.md",
+        "src": "repos/API5/src"
+      },
+      {
+        "version": "API4",
+        "files": "*/doc/api/**.md",
+        "src": "repos/API4/src"
       },
       {
         "version": "internals",
