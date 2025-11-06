@@ -2,6 +2,10 @@
 
 Building TizenFX API Reference
 
+The main purpose of those scripts is to build the whole documentation, multiple versions of TizenFX
+to be uploaded to reference site.
+
+Use `build-local.sh` script if you need to build the documentation for the current state of the TizenFX repository.
 
 ## Prerequisites
 - .NET SDK = 6.0.x : https://dotnet.microsoft.com/download/dotnet/6.0
