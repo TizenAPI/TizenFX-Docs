@@ -5,6 +5,16 @@
         {
           "files": [ "*/*.csproj" ],
           "exclude": [ "**/obj/**", "**/bin/**" ],
+          "src": "repos/API14/src"
+        }
+      ],
+      "dest": "obj/API14/api"
+    },
+    {
+      "src": [
+        {
+          "files": [ "*/*.csproj" ],
+          "exclude": [ "**/obj/**", "**/bin/**" ],
           "src": "repos/API13/src"
         }
       ],
@@ -105,7 +115,7 @@
         {
           "files": [ "*/*.csproj" ],
           "exclude": [ "**/obj/**", "**/bin/**" ],
-          "src": "repos/API13/internals/src"
+          "src": "repos/API14/internals/src"
         }
       ],
       "dest": "obj/internals/api"
@@ -113,6 +123,18 @@
   ],
   "build": {
     "content": [
+      {
+        "version": "API14",
+        "files": [ "**/*.yml" ],
+        "src": "obj/API14",
+        "dest": "API14"
+      },
+      {
+        "version": "API14",
+        "files": [ "**/*.{yml,md}" ],
+        "src": "specs/API14",
+        "dest": "API14"
+      },
       {
         "version": "API13",
         "files": [ "**/*.yml" ],
@@ -251,6 +273,11 @@
     ],
     "overwrite": [
       {
+        "version": "API14",
+        "files": "*/doc/api/**.md",
+        "src": "repos/API14/src"
+      },
+      {
         "version": "API13",
         "files": "*/doc/api/**.md",
         "src": "repos/API13/src"
@@ -303,7 +330,7 @@
       {
         "version": "internals",
         "files": "*/doc/api/**.md",
-        "src": "repos/API13/internals/src"
+        "src": "repos/API14/internals/src"
       }
     ],
     "resource": [
