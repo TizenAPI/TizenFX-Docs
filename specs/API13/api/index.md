@@ -5,7 +5,6 @@
 * <xref:ElmSharp.Wearable>
 * <xref:Tizen>
 * <xref:Tizen.Account.AccountManager>
-* <xref:Tizen.Account.FidoClient>
 * <xref:Tizen.Account.OAuth2>
 * <xref:Tizen.Account.SyncManager>
 * <xref:Tizen.Applications>
@@ -34,12 +33,8 @@
 * <xref:Tizen.Data.Tdbc>
 * <xref:Tizen.Internals.Errors>
 * <xref:Tizen.Location>
-* <xref:Tizen.Location.Geofence>
 * <xref:Tizen.MachineLearning.Inference>
 * <xref:Tizen.MachineLearning.Train>
-* <xref:Tizen.Maps>
-* <xref:Tizen.Messaging.Email>
-* <xref:Tizen.Messaging.Messages>
 * <xref:Tizen.Messaging.Push>
 * <xref:Tizen.Multimedia>
 * <xref:Tizen.Multimedia.MediaCodec>
@@ -55,7 +50,6 @@
 * <xref:Tizen.Network.Stc>
 * <xref:Tizen.Network.WiFi>
 * <xref:Tizen.Network.WiFiDirect>
-* <xref:Tizen.Nlp>
 * <xref:Tizen.NUI>
 * <xref:Tizen.NUI.BaseComponents>
 * <xref:Tizen.NUI.BaseComponents.VectorGraphics>
