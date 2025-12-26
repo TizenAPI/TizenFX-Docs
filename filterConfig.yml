@@ -1,0 +1,6 @@
+apiRules:
+  - exclude:
+      attributes:
+        - System.ComponentModel.EditorBrowsableAttribute
+      condition: "EditorBrowsableState.Never"
+    run: true

@@ -3,19 +3,36 @@
     {
       "src": [
         {
-          "files": [ "*/*.csproj" ],
-          "exclude": [ "**/obj/**", "**/bin/**" ],
+          "files": [
+            "*/*.csproj"
+          ],
+          "exclude": [
+            "**/obj/**",
+            "**/bin/**"
+          ],
           "src": "repos/API14/src"
         }
       ],
-      "dest": "obj/API14/api"
+      "dest": "obj/API14/api",
+      "properties": {
+        "TargetFramework": "net8.0"
+      }
     },
     {
       "src": [
         {
-          "files": [ "*/*.csproj" ],
-          "exclude": [ "**/obj/**", "**/bin/**" ],
-          "src": "repos/API13/src"
+          "files": [
+            "*/*.csproj"
+          ],
+          "exclude": [
+            "**/obj/**",
+            "**/bin/**"
+          ],
+          "src": "repos/API13/src",
+          "filter": "filterConfig.yml",
+          "properties": {
+            "TargetFramework": "net6.0"
+          }
         }
       ],
       "dest": "obj/API13/api"
@@ -23,9 +40,18 @@
     {
       "src": [
         {
-          "files": [ "*/*.csproj" ],
-          "exclude": [ "**/obj/**", "**/bin/**" ],
-          "src": "repos/API12/src"
+          "files": [
+            "*/*.csproj"
+          ],
+          "exclude": [
+            "**/obj/**",
+            "**/bin/**"
+          ],
+          "src": "repos/API12/src",
+          "filter": "filterConfig.yml",
+          "properties": {
+            "TargetFramework": "net6.0"
+          }
         }
       ],
       "dest": "obj/API12/api"
@@ -33,9 +59,18 @@
     {
       "src": [
         {
-          "files": [ "*/*.csproj" ],
-          "exclude": [ "**/obj/**", "**/bin/**" ],
-          "src": "repos/API11/src"
+          "files": [
+            "*/*.csproj"
+          ],
+          "exclude": [
+            "**/obj/**",
+            "**/bin/**"
+          ],
+          "src": "repos/API11/src",
+          "filter": "filterConfig.yml",
+          "properties": {
+            "TargetFramework": "net6.0"
+          }
         }
       ],
       "dest": "obj/API11/api"
@@ -43,9 +78,18 @@
     {
       "src": [
         {
-          "files": [ "*/*.csproj" ],
-          "exclude": [ "**/obj/**", "**/bin/**" ],
-          "src": "repos/API10/src"
+          "files": [
+            "*/*.csproj"
+          ],
+          "exclude": [
+            "**/obj/**",
+            "**/bin/**"
+          ],
+          "src": "repos/API10/src",
+          "filter": "filterConfig.yml",
+          "properties": {
+            "TargetFramework": "net6.0"
+          }
         }
       ],
       "dest": "obj/API10/api"
@@ -53,9 +97,18 @@
     {
       "src": [
         {
-          "files": [ "*/*.csproj" ],
-          "exclude": [ "**/obj/**", "**/bin/**" ],
-          "src": "repos/API9/src"
+          "files": [
+            "*/*.csproj"
+          ],
+          "exclude": [
+            "**/obj/**",
+            "**/bin/**"
+          ],
+          "src": "repos/API9/src",
+          "filter": "filterConfig.yml",
+          "properties": {
+            "TargetFramework": "net6.0"
+          }
         }
       ],
       "dest": "obj/API9/api"
@@ -63,9 +116,18 @@
     {
       "src": [
         {
-          "files": [ "*/*.csproj" ],
-          "exclude": [ "**/obj/**", "**/bin/**" ],
-          "src": "repos/API8/src"
+          "files": [
+            "*/*.csproj"
+          ],
+          "exclude": [
+            "**/obj/**",
+            "**/bin/**"
+          ],
+          "src": "repos/API8/src",
+          "filter": "filterConfig.yml",
+          "properties": {
+            "TargetFramework": "net6.0"
+          }
         }
       ],
       "dest": "obj/API8/api"
@@ -73,9 +135,18 @@
     {
       "src": [
         {
-          "files": [ "*/*.csproj" ],
-          "exclude": [ "**/obj/**", "**/bin/**" ],
-          "src": "repos/API7/src"
+          "files": [
+            "*/*.csproj"
+          ],
+          "exclude": [
+            "**/obj/**",
+            "**/bin/**"
+          ],
+          "src": "repos/API7/src",
+          "filter": "filterConfig.yml",
+          "properties": {
+            "TargetFramework": "net6.0"
+          }
         }
       ],
       "dest": "obj/API7/api"
@@ -83,9 +154,18 @@
     {
       "src": [
         {
-          "files": [ "*/*.csproj" ],
-          "exclude": [ "**/obj/**", "**/bin/**" ],
-          "src": "repos/API6/src"
+          "files": [
+            "*/*.csproj"
+          ],
+          "exclude": [
+            "**/obj/**",
+            "**/bin/**"
+          ],
+          "src": "repos/API6/src",
+          "filter": "filterConfig.yml",
+          "properties": {
+            "TargetFramework": "net6.0"
+          }
         }
       ],
       "dest": "obj/API6/api"
@@ -93,9 +173,18 @@
     {
       "src": [
         {
-          "files": [ "*/*.csproj" ],
-          "exclude": [ "**/obj/**", "**/bin/**" ],
-          "src": "repos/API5/src"
+          "files": [
+            "*/*.csproj"
+          ],
+          "exclude": [
+            "**/obj/**",
+            "**/bin/**"
+          ],
+          "src": "repos/API5/src",
+          "filter": "filterConfig.yml",
+          "properties": {
+            "TargetFramework": "net6.0"
+          }
         }
       ],
       "dest": "obj/API5/api"
@@ -103,9 +192,18 @@
     {
       "src": [
         {
-          "files": [ "*/*.csproj" ],
-          "exclude": [ "**/obj/**", "**/bin/**" ],
-          "src": "repos/API4/src"
+          "files": [
+            "*/*.csproj"
+          ],
+          "exclude": [
+            "**/obj/**",
+            "**/bin/**"
+          ],
+          "src": "repos/API4/src",
+          "filter": "filterConfig.yml",
+          "properties": {
+            "TargetFramework": "net6.0"
+          }
         }
       ],
       "dest": "obj/API4/api"
@@ -113,186 +211,243 @@
     {
       "src": [
         {
-          "files": [ "*/*.csproj" ],
-          "exclude": [ "**/obj/**", "**/bin/**" ],
+          "files": [
+            "*/*.csproj"
+          ],
+          "exclude": [
+            "**/obj/**",
+            "**/bin/**"
+          ],
           "src": "repos/API14/internals/src"
         }
       ],
-      "dest": "obj/internals/api"
+      "dest": "obj/internals/api",
+      "filter": "filterConfig.yml"
     }
   ],
   "build": {
     "content": [
       {
         "version": "API14",
-        "files": [ "**/*.yml" ],
+        "files": [
+          "**/*.yml"
+        ],
         "src": "obj/API14",
         "dest": "API14",
         "rootTocPath": "toc.html"
       },
       {
         "version": "API14",
-        "files": [ "**/*.{yml,md}" ],
+        "files": [
+          "**/*.{yml,md}"
+        ],
         "src": "specs/API14",
         "dest": "API14",
         "rootTocPath": "toc.html"
       },
       {
         "version": "API13",
-        "files": [ "**/*.yml" ],
+        "files": [
+          "**/*.yml"
+        ],
         "src": "obj/API13",
         "dest": "API13",
         "rootTocPath": "toc.html"
       },
       {
         "version": "API13",
-        "files": [ "**/*.{yml,md}" ],
+        "files": [
+          "**/*.{yml,md}"
+        ],
         "src": "specs/API13",
         "dest": "API13",
         "rootTocPath": "toc.html"
       },
       {
         "version": "API12",
-        "files": [ "**/*.yml" ],
+        "files": [
+          "**/*.yml"
+        ],
         "src": "obj/API12",
         "dest": "API12",
         "rootTocPath": "toc.html"
       },
       {
         "version": "API12",
-        "files": [ "**/*.{yml,md}" ],
+        "files": [
+          "**/*.{yml,md}"
+        ],
         "src": "specs/API12",
         "dest": "API12",
         "rootTocPath": "toc.html"
       },
       {
         "version": "API11",
-        "files": [ "**/*.yml" ],
+        "files": [
+          "**/*.yml"
+        ],
         "src": "obj/API11",
         "dest": "API11",
         "rootTocPath": "toc.html"
       },
       {
         "version": "API11",
-        "files": [ "**/*.{yml,md}" ],
+        "files": [
+          "**/*.{yml,md}"
+        ],
         "src": "specs/API11",
         "dest": "API11",
         "rootTocPath": "toc.html"
       },
       {
         "version": "API10",
-        "files": [ "**/*.yml" ],
+        "files": [
+          "**/*.yml"
+        ],
         "src": "obj/API10",
         "dest": "API10",
         "rootTocPath": "toc.html"
       },
       {
         "version": "API10",
-        "files": [ "**/*.{yml,md}" ],
+        "files": [
+          "**/*.{yml,md}"
+        ],
         "src": "specs/API10",
         "dest": "API10",
         "rootTocPath": "toc.html"
       },
       {
         "version": "API9",
-        "files": [ "**/*.yml" ],
+        "files": [
+          "**/*.yml"
+        ],
         "src": "obj/API9",
         "dest": "API9",
         "rootTocPath": "toc.html"
       },
       {
         "version": "API9",
-        "files": [ "**/*.{yml,md}" ],
+        "files": [
+          "**/*.{yml,md}"
+        ],
         "src": "specs/API9",
         "dest": "API9",
         "rootTocPath": "toc.html"
       },
       {
         "version": "API8",
-        "files": [ "**/*.yml" ],
+        "files": [
+          "**/*.yml"
+        ],
         "src": "obj/API8",
         "dest": "API8",
         "rootTocPath": "toc.html"
       },
       {
         "version": "API8",
-        "files": [ "**/*.{yml,md}" ],
+        "files": [
+          "**/*.{yml,md}"
+        ],
         "src": "specs/API8",
         "dest": "API8",
         "rootTocPath": "toc.html"
       },
       {
         "version": "API7",
-        "files": [ "**/*.yml" ],
+        "files": [
+          "**/*.yml"
+        ],
         "src": "obj/API7",
         "dest": "API7",
         "rootTocPath": "toc.html"
       },
       {
         "version": "API7",
-        "files": [ "**/*.{yml,md}" ],
+        "files": [
+          "**/*.{yml,md}"
+        ],
         "src": "specs/API7",
         "dest": "API7",
         "rootTocPath": "toc.html"
       },
       {
         "version": "API6",
-        "files": [ "**/*.yml" ],
+        "files": [
+          "**/*.yml"
+        ],
         "src": "obj/API6",
         "dest": "API6",
         "rootTocPath": "toc.html"
       },
       {
         "version": "API6",
-        "files": [ "**/*.{yml,md}" ],
+        "files": [
+          "**/*.{yml,md}"
+        ],
         "src": "specs/API6",
         "dest": "API6",
         "rootTocPath": "toc.html"
       },
       {
         "version": "API5",
-        "files": [ "**/*.yml" ],
+        "files": [
+          "**/*.yml"
+        ],
         "src": "obj/API5",
         "dest": "API5",
         "rootTocPath": "toc.html"
       },
       {
         "version": "API5",
-        "files": [ "**/*.{yml,md}" ],
+        "files": [
+          "**/*.{yml,md}"
+        ],
         "src": "specs/API5",
         "dest": "API5",
         "rootTocPath": "toc.html"
       },
       {
         "version": "API4",
-        "files": [ "**/*.yml" ],
+        "files": [
+          "**/*.yml"
+        ],
         "src": "obj/API4",
         "dest": "API4",
         "rootTocPath": "toc.html"
       },
       {
         "version": "API4",
-        "files": [ "**/*.{yml,md}" ],
+        "files": [
+          "**/*.{yml,md}"
+        ],
         "src": "specs/API4",
         "dest": "API4",
         "rootTocPath": "toc.html"
       },
       {
         "version": "internals",
-        "files": [ "**/*.yml" ],
+        "files": [
+          "**/*.yml"
+        ],
         "src": "obj/internals",
         "dest": "internals",
         "rootTocPath": "toc.html"
       },
       {
         "version": "internals",
-        "files": [ "**/*.{yml,md}" ],
+        "files": [
+          "**/*.{yml,md}"
+        ],
         "src": "repos/API14/internals/docs",
         "dest": "internals",
         "rootTocPath": "toc.html"
       },
       {
-        "files": [ "toc.yml", "index.md" ]
+        "files": [
+          "toc.yml",
+          "index.md"
+        ]
       }
     ],
     "overwrite": [
@@ -359,7 +514,9 @@
     ],
     "resource": [
       {
-        "files": [ "images/**" ]
+        "files": [
+          "images/**"
+        ]
       }
     ],
     "dest": "_site",
@@ -369,16 +526,20 @@
       "./templates/tizen"
     ],
     "globalMetadata": {
-        "_appLogoPath" : "images/tizen_logo.png",
-        "_appFaviconPath" : "images/tizen_favicon.ico",
-        "_appFooter" : "<span>Copyright &copy; 2016-2025 Samsung <br> Generated by <strong>DocFX</strong></span>",
-        "_disableAffix": false,
-        "_disableContribution": false,
-        "_baseUrl": "https://samsung.github.io/TizenFX/main/",
-        "_enableSearch" : "true"
+      "_appLogoPath": "images/tizen_logo.png",
+      "_appFaviconPath": "images/tizen_favicon.ico",
+      "_appFooter": "<span>Copyright &copy; 2016-2025 Samsung <br> Generated by <strong>DocFX</strong></span>",
+      "_disableAffix": false,
+      "_disableContribution": false,
+      "_baseUrl": "https://samsung.github.io/TizenFX/main/",
+      "_enableSearch": "true"
     },
-    "xrefService": [ "https://xref.docs.microsoft.com/query?uid={uid}" ],
-    "postProcessors": ["ExtractSearchIndex"],
+    "xrefService": [
+      "https://xref.docs.microsoft.com/query?uid={uid}"
+    ],
+    "postProcessors": [
+      "ExtractSearchIndex"
+    ],
     "noLangKeyword": false,
     "keepFileLink": false,
     "cleanupCacheHistory": false
