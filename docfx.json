@@ -8,7 +8,10 @@
           "src": "repos/API14/src"
         }
       ],
-      "dest": "obj/API14/api"
+	  "properties": {
+		"AdditionalArguments": "/extern:AliasName=AssemblyPath" 
+	  },
+      "dest": "obj/API14/api"      
     },
     {
       "src": [
@@ -18,7 +21,10 @@
           "src": "repos/API14/internals/src"
         }
       ],
-      "dest": "obj/internals/api"
+	  "properties": {
+		"AdditionalArguments": "/extern:AliasName=AssemblyPath" 
+	  },
+      "dest": "obj/internals/api"    
     }
   ],
   "build": {
@@ -55,6 +61,7 @@
         "files": [ "toc.yml", "index.md" ]
       }
     ],
+    "filter": "filterConfig.yml",
     "overwrite": [
       {
         "version": "API14",
@@ -64,7 +71,7 @@
       {
         "version": "internals",
         "files": "*/doc/api/**.md",
-        "src": "repos/API12/internals/src"
+        "src": "repos/API14/internals/src"
       }
     ],
     "resource": [
@@ -91,6 +98,10 @@
     "postProcessors": ["ExtractSearchIndex"],
     "noLangKeyword": false,
     "keepFileLink": false,
-    "cleanupCacheHistory": false
+    "cleanupCacheHistory": false,
+    "allowCoreUnresolved": true,
+    "force": true,
+    "warningsAsError": false,
+    "shouldSkipKeepAlive": true
   }
 }
