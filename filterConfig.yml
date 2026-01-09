@@ -1,3 +1,4 @@
 apiRules:
-- exclude:
-    uidRegex: ^.*\.Never.*$
+  - exclude:
+      hasAttribute:
+        uid: System.ComponentModel.EditorBrowsableAttribute

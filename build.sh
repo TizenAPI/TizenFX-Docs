@@ -1,8 +1,9 @@
 #!/bin/bash -e
 SCRIPT_DIR=$(dirname $(readlink -f $0))
 
-VERSIONS="API14"
+VERSIONS="API4 API5 API6 API7 API8 API9 API10 API11 API12 API13 API14"
 BRANCH_API14=main
+STABLE="API13"
 
 GIT_URL="https://github.com/Samsung/TizenFX.git"
 REPO_DIR="$SCRIPT_DIR/repos"
@@ -47,10 +48,24 @@ clone_repos() {
       pushd $REPO_DIR/$v
       git fetch origin
       git reset --hard origin/$branch
+      ## resolve dependency
+      echo "Replace csproj file..."
+      rm -rf $REPO_DIR/$v/src/Tizen.NUI.Design
+      rm -rf $REPO_DIR/$v/src/Tizen.NUI.Components.Design
+      rm -rf $REPO_DIR/$v/src/Tizen.NUI.XamlBuild
+      rm $REPO_DIR/$v/src/Tizen.NUI/Tizen.NUI.csproj
+      cp ../../csproj/Tizen.NUI-$v.csproj $REPO_DIR/$v/src/Tizen.NUI/Tizen.NUI.csproj
       popd
     else
       pushd $REPO_DIR
       git clone $GIT_URL --branch $branch --single-branch --depth 1 $v
+      ## resolve dependency
+      echo "Replace csproj file..."
+      rm -rf $REPO_DIR/$v/src/Tizen.NUI.Design
+      rm -rf $REPO_DIR/$v/src/Tizen.NUI.Components.Design
+      rm -rf $REPO_DIR/$v/src/Tizen.NUI.XamlBuild
+      rm $REPO_DIR/$v/src/Tizen.NUI/Tizen.NUI.csproj
+      cp ../csproj/Tizen.NUI-$v.csproj $REPO_DIR/$v/src/Tizen.NUI/Tizen.NUI.csproj
       popd
     fi
 
