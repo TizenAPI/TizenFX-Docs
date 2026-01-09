@@ -8,7 +8,10 @@
           "src": "repos/API14/src"
         }
       ],
-      "dest": "obj/API14/api"
+      "dest": "obj/API14/api",
+      "properties": {
+        "DefineConstants": "DOCFX"
+      }
     },
     {
       "src": [
@@ -18,7 +21,10 @@
           "src": "repos/API13/src"
         }
       ],
-      "dest": "obj/API13/api"
+      "dest": "obj/API13/api",
+      "properties": {
+        "DefineConstants": "DOCFX"
+      }
     },
     {
       "src": [
@@ -28,7 +34,10 @@
           "src": "repos/API12/src"
         }
       ],
-      "dest": "obj/API12/api"
+      "dest": "obj/API12/api",
+      "properties": {
+        "DefineConstants": "DOCFX"
+      }
     },
     {
       "src": [
@@ -38,7 +47,10 @@
           "src": "repos/API11/src"
         }
       ],
-      "dest": "obj/API11/api"
+      "dest": "obj/API11/api",
+      "properties": {
+        "DefineConstants": "DOCFX"
+      }
     },
     {
       "src": [
@@ -48,7 +60,10 @@
           "src": "repos/API10/src"
         }
       ],
-      "dest": "obj/API10/api"
+      "dest": "obj/API10/api",
+      "properties": {
+        "DefineConstants": "DOCFX"
+      }
     },
     {
       "src": [
@@ -58,7 +73,10 @@
           "src": "repos/API9/src"
         }
       ],
-      "dest": "obj/API9/api"
+      "dest": "obj/API9/api",
+      "properties": {
+        "DefineConstants": "DOCFX"
+      }
     },
     {
       "src": [
@@ -68,7 +86,10 @@
           "src": "repos/API8/src"
         }
       ],
-      "dest": "obj/API8/api"
+      "dest": "obj/API8/api",
+      "properties": {
+        "DefineConstants": "DOCFX"
+      }
     },
     {
       "src": [
@@ -78,7 +99,10 @@
           "src": "repos/API7/src"
         }
       ],
-      "dest": "obj/API7/api"
+      "dest": "obj/API7/api",
+      "properties": {
+        "DefineConstants": "DOCFX"
+      }
     },
     {
       "src": [
@@ -88,7 +112,10 @@
           "src": "repos/API6/src"
         }
       ],
-      "dest": "obj/API6/api"
+      "dest": "obj/API6/api",
+      "properties": {
+        "DefineConstants": "DOCFX"
+      }
     },
     {
       "src": [
@@ -98,7 +125,10 @@
           "src": "repos/API5/src"
         }
       ],
-      "dest": "obj/API5/api"
+      "dest": "obj/API5/api",
+      "properties": {
+        "DefineConstants": "DOCFX"
+      }
     },
     {
       "src": [
@@ -108,7 +138,10 @@
           "src": "repos/API4/src"
         }
       ],
-      "dest": "obj/API4/api"
+      "dest": "obj/API4/api",
+      "properties": {
+        "DefineConstants": "DOCFX"
+      }
     },
     {
       "src": [
@@ -118,7 +151,10 @@
           "src": "repos/API14/internals/src"
         }
       ],
-      "dest": "obj/internals/api"
+      "dest": "obj/internals/api",
+      "properties": {
+        "DefineConstants": "DOCFX"
+      }
     }
   ],
   "build": {
