@@ -60,7 +60,6 @@
 * <xref:Tizen.NUI.Scene3D>
 * <xref:Tizen.NUI.Text>
 * <xref:Tizen.NUI.WindowSystem.Shell>
-* <xref:Tizen.NUI.Xaml.Build.Tasks>
 * <xref:Tizen.PhonenumberUtils>
 * <xref:Tizen.Pims.Calendar>
 * <xref:Tizen.Pims.Calendar.CalendarViews>

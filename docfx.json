@@ -10,8 +10,10 @@
       ],
       "dest": "obj/API14/api",
       "properties": {
-        "DefineConstants": "DOCFX"
-      }
+        "DefineConstants": "DOCFX",
+        "TargetFramework": "net8.0"
+      },
+      "filter": "filterConfig.yml"
     },
     {
       "src": [
@@ -24,7 +26,8 @@
       "dest": "obj/API13/api",
       "properties": {
         "DefineConstants": "DOCFX"
-      }
+      },
+      "filter": "filterConfig.yml"
     },
     {
       "src": [
@@ -37,7 +40,8 @@
       "dest": "obj/API12/api",
       "properties": {
         "DefineConstants": "DOCFX"
-      }
+      },
+      "filter": "filterConfig.yml"
     },
     {
       "src": [
@@ -50,7 +54,8 @@
       "dest": "obj/API11/api",
       "properties": {
         "DefineConstants": "DOCFX"
-      }
+      },
+      "filter": "filterConfig.yml"
     },
     {
       "src": [
@@ -63,7 +68,8 @@
       "dest": "obj/API10/api",
       "properties": {
         "DefineConstants": "DOCFX"
-      }
+      },
+      "filter": "filterConfig.yml"
     },
     {
       "src": [
@@ -76,7 +82,8 @@
       "dest": "obj/API9/api",
       "properties": {
         "DefineConstants": "DOCFX"
-      }
+      },
+      "filter": "filterConfig.yml"
     },
     {
       "src": [
@@ -89,7 +96,8 @@
       "dest": "obj/API8/api",
       "properties": {
         "DefineConstants": "DOCFX"
-      }
+      },
+      "filter": "filterConfig.yml"
     },
     {
       "src": [
@@ -102,7 +110,8 @@
       "dest": "obj/API7/api",
       "properties": {
         "DefineConstants": "DOCFX"
-      }
+      },
+      "filter": "filterConfig.yml"
     },
     {
       "src": [
@@ -115,7 +124,8 @@
       "dest": "obj/API6/api",
       "properties": {
         "DefineConstants": "DOCFX"
-      }
+      },
+      "filter": "filterConfig.yml"
     },
     {
       "src": [
@@ -128,7 +138,8 @@
       "dest": "obj/API5/api",
       "properties": {
         "DefineConstants": "DOCFX"
-      }
+      },
+      "filter": "filterConfig.yml"
     },
     {
       "src": [
@@ -141,7 +152,8 @@
       "dest": "obj/API4/api",
       "properties": {
         "DefineConstants": "DOCFX"
-      }
+      },
+      "filter": "filterConfig.yml"
     },
     {
       "src": [
@@ -153,8 +165,10 @@
       ],
       "dest": "obj/internals/api",
       "properties": {
-        "DefineConstants": "DOCFX"
-      }
+        "DefineConstants": "DOCFX",
+        "TargetFramework": "net8.0"
+      },
+      "filter": "filterConfig.yml"
     }
   ],
   "build": {
