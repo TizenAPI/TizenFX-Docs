@@ -2,3 +2,5 @@ apiRules:
   - exclude:
       hasAttribute:
         uid: System.ComponentModel.EditorBrowsableAttribute
+        ctorArguments:
+        - Never

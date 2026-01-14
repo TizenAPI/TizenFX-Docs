@@ -10,8 +10,7 @@
       ],
       "dest": "obj/API14/api",
       "properties": {
-        "DefineConstants": "DOCFX",
-        "TargetFramework": "net8.0"
+        "DefineConstants": "DOCFX"
       },
       "filter": "filterConfig.yml"
     },
@@ -415,6 +414,7 @@
     "dest": "_site",
     "template": [
       "default",
+      "statictoc",
       "./templates/material",
       "./templates/tizen"
     ],
