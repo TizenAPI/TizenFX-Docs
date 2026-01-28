@@ -1,9 +1,9 @@
 #!/bin/bash -e
 SCRIPT_DIR=$(dirname $(readlink -f $0))
 
-VERSIONS="API4 API5 API6 API7 API8 API9 API10 API11 API12 API13 API14"
+VERSIONS="API4 API5 API6 API7 API8 API9 API10 API11 API12 API14"
 BRANCH_API14=main
-STABLE="API13"
+STABLE="API12"
 
 GIT_URL="https://github.com/Samsung/TizenFX.git"
 REPO_DIR="$SCRIPT_DIR/repos"
@@ -75,7 +75,7 @@ clone_repos() {
 }
 
 TEMP_SLN_NAME="_tizenfx_public"
-TEMP_SLN_FILE="$TEMP_SLN_NAME.sln"
+TEMP_SLN_FILE="$TEMP_SLN_NAME.slnx"
 
 restore_repos() {
   for v in $VERSIONS; do
@@ -84,6 +84,7 @@ restore_repos() {
       pushd $REPO_DIR/$v
       if [ ! -f $TEMP_SLN_FILE ]; then
         dotnet new sln -n $TEMP_SLN_NAME
+        ls
         dotnet sln $TEMP_SLN_FILE add src/**/*.csproj
         if [ -d internals/src ]; then
           dotnet sln $TEMP_SLN_FILE add internals/src/**/*.csproj
@@ -120,7 +121,7 @@ build_docs() {
 }
 
 build_index() {
-  command node --max-old-space-size=10240 $SCRIPT_DIR/build-index.js
+  command node --max-old-space-size=10240 $SCRIPT_DIR/build-index2.js
   rm $SITE_DIR/index-prebuilt.json
 }
 
