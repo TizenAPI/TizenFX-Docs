@@ -121,7 +121,7 @@ build_docs() {
 }
 
 build_index() {
-  command node --max-old-space-size=10240 $SCRIPT_DIR/build-index2.js
+  command node --max-old-space-size=4096 $SCRIPT_DIR/build-index2.js
   rm $SITE_DIR/index-prebuilt.json
 }
 
