@@ -5,8 +5,8 @@ const fs = require('fs');
 const lunr = require('lunr');
 
 // 대용량 JSON 스트리밍 처리를 위한 라이브러리
-const { chain } = require('stream-json/Parser');
-const { streamObject } = require('stream-json/streamers/StreamObject');
+const { chain } = require('stream-chain');
+const StreamObject = require('stream-json/streamers/StreamObject');
 
 const kStopWordFile = './_site/search-stopwords.json';
 const kSearchDataFile = './_site/index.json';
@@ -85,7 +85,7 @@ function streamFileIntoBuilder(filePath, builder) {
   return new Promise((resolve, reject) => {
     const pipeline = fs.createReadStream(filePath)
       .pipe(chain([
-        streamObject(), 
+        StreamObject.withParser(), 
       ]));
 
     let count = 0;
