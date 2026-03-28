@@ -159,8 +159,11 @@ build_docs() {
     fi
   done
   rm -f docfx_temp.json
+}
 
-  cp -f $COMMIT_HASH_FILE $SITE_DIR
+create_links() {
+  echo "Generating symlinks in $SITE_DIR ..."
+  cp -f $COMMIT_HASH_FILE $SITE_DIR || true
 
   # generate symlinks
   pushd $SITE_DIR
@@ -179,7 +182,8 @@ build_docs() {
 
 build_index() {
   command node --max-old-space-size=4096 $SCRIPT_DIR/build-index2.js
-  rm $SITE_DIR/index.json
+  rm -f $SITE_DIR/index.json
+  create_links
 }
 
 build_full() {
