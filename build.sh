@@ -48,6 +48,9 @@ clone_repos() {
   fi
 
   for v in $targets; do
+    if [ "$v" == "internals" ]; then
+      continue
+    fi
     echo "Retrieving $v ..."
     local branch=$(branchname $v)
     if [ -d "$REPO_DIR/$v/.git" ]; then
@@ -91,6 +94,9 @@ restore_repos() {
   fi
 
   for v in $targets; do
+    if [ "$v" == "internals" ]; then
+      continue
+    fi
     echo "Restoring $v ..."
     if [ -d "$REPO_DIR/$v" ]; then
       pushd $REPO_DIR/$v
