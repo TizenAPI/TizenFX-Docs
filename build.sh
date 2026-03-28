@@ -101,7 +101,7 @@ restore_repos() {
     if [ -d "$REPO_DIR/$v" ]; then
       pushd $REPO_DIR/$v
       if [ ! -f $TEMP_SLN_FILE ]; then
-        dotnet new sln -n $TEMP_SLN_NAME
+        dotnet new sln -n $TEMP_SLN_NAME -f sln
         ls
         dotnet sln $TEMP_SLN_FILE add src/**/*.csproj
         if [ -d internals/src ]; then
