@@ -84,7 +84,7 @@ clone_repos() {
 }
 
 TEMP_SLN_NAME="_tizenfx_public"
-TEMP_SLN_FILE="$TEMP_SLN_NAME.slnx"
+TEMP_SLN_FILE="$TEMP_SLN_NAME.sln"
 
 restore_repos() {
   local target_v=$1
