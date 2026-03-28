@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 // Lunr 라이브러리 로드
-const lunr = require('./_site/styles/lunr.min.js');
+const lunr = require('lunr');
 
 // 대용량 JSON 스트리밍 처리를 위한 라이브러리
 const { chain } = require('stream-json/Parser');
@@ -22,9 +22,9 @@ let stopWords = null;
     console.log('Loading ' + kStopWordFile + ' ...');
     loadStopWords();
 
-    console.log('Building Indexes from ' + kSearchDataFile + ' (Streaming) ...');
+    console.log('Building Indexes from multiple index-*.json files (Streaming) ...');
     // 메모리를 아끼기 위해 로딩과 빌드를 동시에 수행합니다.
-    const index = await buildIndexStreaming();
+    const index = await buildIndexFromAllFiles();
 
     console.log('Saving prebuilt indexes ... => ' + kPrebuiltFile);
     saveIndex(index);
@@ -46,54 +46,63 @@ function loadStopWords() {
   }
 }
 
-function buildIndexStreaming() {
+async function buildIndexFromAllFiles() {
+  const builder = new lunr.Builder();
+  builder.pipeline.remove(lunr.stopWordFilter);
+  builder.ref('href');
+  builder.field('title', { boost: 50 });
+  builder.field('keywords', { boost: 20 });
+
+  if (stopWords && stopWords.length > 0) {
+    let docfxStopWordFilter = lunr.generateStopWordFilter(stopWords);
+    lunr.Pipeline.registerFunction(docfxStopWordFilter, 'docfxStopWordFilter');
+    builder.pipeline.add(docfxStopWordFilter);
+    builder.searchPipeline.add(docfxStopWordFilter);
+  }
+
+  // _site 폴더에서 index-*.json 파일을 모두 찾아 순차 처리
+  const siteDir = './_site';
+  const files = fs.readdirSync(siteDir)
+    .filter(f => f.startsWith('index-') && f.endsWith('.json') && f !== 'index-prebuilt.json');
+
+  if (files.length === 0) {
+     const singleFile = './_site/index.json';
+     if (fs.existsSync(singleFile)) files.push('index.json');
+  }
+
+  console.log(`Found ${files.length} index files to merge.`);
+
+  for (const file of files) {
+    const filePath = `${siteDir}/${file}`;
+    console.log(`Processing ${file} ...`);
+    await streamFileIntoBuilder(filePath, builder);
+  }
+
+  return builder.build();
+}
+
+function streamFileIntoBuilder(filePath, builder) {
   return new Promise((resolve, reject) => {
-    // 1. Lunr Builder 수동 생성 (기존 lunr(function(){...}) 방식은 동기식이라 스트림에 부적합)
-    const builder = new lunr.Builder();
-
-    // 2. 파이프라인 설정 (기존 로직 그대로 이식)
-    builder.pipeline.remove(lunr.stopWordFilter);
-    builder.ref('href');
-    builder.field('title', { boost: 50 });
-    builder.field('keywords', { boost: 20 });
-
-    // StopWord 필터 설정
-    if (stopWords && stopWords.length > 0) {
-      let docfxStopWordFilter = lunr.generateStopWordFilter(stopWords);
-      lunr.Pipeline.registerFunction(docfxStopWordFilter, 'docfxStopWordFilter');
-      builder.pipeline.add(docfxStopWordFilter);
-      builder.searchPipeline.add(docfxStopWordFilter);
-    }
-
-    // 3. 파일 스트림 생성 및 파이프라인 연결
-    // docfx의 index.json은 보통 {"uid": {data}, ...} 형태의 Object이므로 streamObject 사용
-    const pipeline = fs.createReadStream(kSearchDataFile)
+    const pipeline = fs.createReadStream(filePath)
       .pipe(chain([
-        streamObject(), // JSON 객체의 키-값 쌍을 하나씩 스트리밍
+        streamObject(), 
       ]));
 
     let count = 0;
-
-    // 4. 데이터가 한 건씩 들어올 때마다 Lunr에 추가
     pipeline.on('data', (data) => {
-      // data.key는 문서의 UID/URL, data.value는 문서 내용 객체
       const doc = data.value;
       if (doc) {
         builder.add(doc);
         count++;
-        // 진행 상황 로그 (선택 사항)
         if (count % 10000 === 0) {
-          console.log(`Indexed ${count} documents...`);
-          // Node.js 가비지 컬렉션 유도 (옵션: 실행시 node --expose-gc 필요)
           if (global.gc) global.gc();
         }
       }
     });
 
     pipeline.on('end', () => {
-      console.log(`Total ${count} documents indexed.`);
-      // 5. 인덱스 빌드 완료
-      resolve(builder.build());
+      console.log(`Finished ${filePath}: ${count} documents added.`);
+      resolve();
     });
 
     pipeline.on('error', (err) => {

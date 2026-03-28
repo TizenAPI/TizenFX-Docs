@@ -1,7 +1,7 @@
 #!/bin/bash -e
 SCRIPT_DIR=$(dirname $(readlink -f $0))
 
-VERSIONS="API4 API5 API6 API7 API8 API9 API10 API11 API12 API14"
+VERSIONS="API4 API5 API6 API7 API8 API9 API10 API11 API12 API13 API14"
 BRANCH_API14=main
 STABLE="API12"
 
@@ -35,13 +35,19 @@ popd() {
 }
 
 clone_repos() {
+  local target_v=$1
   if [ ! -d $REPO_DIR ]; then
     mkdir -p $REPO_DIR
   fi
 
   rm -f $COMMIT_HASH_FILE
 
-  for v in $VERSIONS; do
+  local targets=$VERSIONS
+  if [ ! -z "$target_v" ]; then
+    targets="$target_v"
+  fi
+
+  for v in $targets; do
     echo "Retrieving $v ..."
     local branch=$(branchname $v)
     if [ -d "$REPO_DIR/$v/.git" ]; then
@@ -78,7 +84,13 @@ TEMP_SLN_NAME="_tizenfx_public"
 TEMP_SLN_FILE="$TEMP_SLN_NAME.slnx"
 
 restore_repos() {
-  for v in $VERSIONS; do
+  local target_v=$1
+  local targets=$VERSIONS
+  if [ ! -z "$target_v" ]; then
+    targets="$target_v"
+  fi
+
+  for v in $targets; do
     echo "Restoring $v ..."
     if [ -d "$REPO_DIR/$v" ]; then
       pushd $REPO_DIR/$v
@@ -100,9 +112,48 @@ restore_repos() {
 }
 
 build_docs() {
+  local target_v=$1
   echo "Use $DOCFX_FILE"
-  docfx metadata $DOCFX_FILE
-  docfx build $DOCFX_FILE || echo "Ignore errors..."
+  
+  local DOCFX_EXE=docfx
+  if [ -f "$HOME/.dotnet/tools/docfx" ]; then
+    DOCFX_EXE="$HOME/.dotnet/tools/docfx"
+  fi
+
+  # Sequential metadata and build to save memory
+  local count=$(jq '.metadata | length' $DOCFX_FILE)
+  for ((i=0; i<$count; i++)); do
+    local api_dest=$(jq -r ".metadata[$i].dest" $DOCFX_FILE)
+    local v=$(echo $api_dest | cut -d'/' -f2) # APIx or internals
+    
+    if [ ! -z "$target_v" ] && [ "$v" != "$target_v" ]; then
+      continue
+    fi
+    
+    echo "[$((i+1))/$count] Generating metadata and building for $v ..."
+    
+    # 1. Generate Metadata (Sequential)
+    jq ".metadata = [.metadata[$i]] | .build = {}" $DOCFX_FILE > docfx_temp.json
+    $DOCFX_EXE metadata docfx_temp.json
+    
+    # 2. Build Documentation (Sequential)
+    # Include version-specific content/overwrite and global (null version) content
+    jq ".metadata = [] | 
+        .build.force = false |
+        .build.content = ([.build.content[] | select(.version == \"$v\" or .version == null)] | unique) | 
+        .build.overwrite = ([.build.overwrite[] | select(.version == \"$v\")] | unique) |
+        .build.dest = \"$SITE_DIR\"" $DOCFX_FILE > docfx_temp.json
+    
+    $DOCFX_EXE build docfx_temp.json || echo "Warning: build failed for $v, ignoring..."
+    
+    # 3. Preserve the search index for this version
+    if [ -f "$SITE_DIR/index.json" ]; then
+       mv "$SITE_DIR/index.json" "$SITE_DIR/index-$v.json"
+       echo "Saved index-$v.json"
+    fi
+  done
+  rm -f docfx_temp.json
+
   cp -f $COMMIT_HASH_FILE $SITE_DIR
 
   # generate symlinks
@@ -122,7 +173,7 @@ build_docs() {
 
 build_index() {
   command node --max-old-space-size=4096 $SCRIPT_DIR/build-index2.js
-  rm $SITE_DIR/index-prebuilt.json
+  rm $SITE_DIR/index.json
 }
 
 build_full() {
@@ -144,10 +195,11 @@ purge() {
 }
 
 CMD=$1
+PARAM=$2
 case "$CMD" in
-  clone) clone_repos ;;
-  restore) restore_repos ;;
-  build) build_docs ;;
+  clone) clone_repos "$PARAM" ;;
+  restore) restore_repos "$PARAM" ;;
+  build) build_docs "$PARAM" ;;
   index) build_index ;;
   clean) clean ;;
   purge) purge ;;

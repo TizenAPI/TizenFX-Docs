@@ -3,4 +3,4 @@ apiRules:
       hasAttribute:
         uid: System.ComponentModel.EditorBrowsableAttribute
         ctorArguments:
-        - Never
+        - System.ComponentModel.EditorBrowsableState.Never
