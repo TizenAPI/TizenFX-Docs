@@ -527,7 +527,6 @@
     "dest": "_site",
     "template": [
       "default",
-      "statictoc",
       "./templates/material",
       "./templates/tizen"
     ],
