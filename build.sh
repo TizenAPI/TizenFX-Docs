@@ -126,8 +126,34 @@ build_docs() {
     DOCFX_EXE="$HOME/.dotnet/tools/docfx"
   fi
 
-  # Sequential metadata and build to save memory
+  # 1. Generate Metadata for ALL versions (usually memory-safe)
+  echo "Generating metadata for all versions..."
+  if [ ! -z "$target_v" ]; then
+      # If target_v is specified, we only have one repo.
+      # But to resolve xrefs, we'd need others. 
+      # For now, if we are in a matrix-like environment, we just build what we have.
+      local count=$(jq '.metadata | length' $DOCFX_FILE)
+      for ((i=0; i<$count; i++)); do
+          local api_dest=$(jq -r ".metadata[$i].dest" $DOCFX_FILE)
+          local v=$(echo $api_dest | cut -d'/' -f2)
+          if [ "$v" == "$target_v" ]; then
+              jq ".metadata = [.metadata[$i]]" $DOCFX_FILE > docfx_metadata_temp.json
+              $DOCFX_EXE metadata docfx_metadata_temp.json
+              rm -f docfx_metadata_temp.json
+              break
+          fi
+      done
+  else
+      # Build all metadata
+      $DOCFX_EXE metadata $DOCFX_FILE
+  fi
+
+  # 2. Build Documentation (Sequential)
   local count=$(jq '.metadata | length' $DOCFX_FILE)
+  
+  # If we have all repos, we can build everything.
+  # If we only have one (due to matrix), we only build one.
+  
   for ((i=0; i<$count; i++)); do
     local api_dest=$(jq -r ".metadata[$i].dest" $DOCFX_FILE)
     local v=$(echo $api_dest | cut -d'/' -f2) # APIx or internals
@@ -136,29 +162,24 @@ build_docs() {
       continue
     fi
     
-    echo "[$((i+1))/$count] Generating metadata and building for $v ..."
+    echo "[$((i+1))/$count] Building documentation for $v ..."
     
-    # 1. Generate Metadata (Sequential)
-    jq ".metadata = [.metadata[$i]] | .build = {}" $DOCFX_FILE > docfx_temp.json
-    $DOCFX_EXE metadata docfx_temp.json
-    
-    # 2. Build Documentation (Sequential)
-    # Include version-specific content/overwrite and global (null version) content
-    jq ".metadata = [] | 
-        .build.force = false |
+    # Render version-specific content AND root files
+    # We include ALL metadata to allow xref resolution
+    jq ".build.force = true |
         .build.content = ([.build.content[] | select(.version == \"$v\" or .version == null)] | unique) | 
         .build.overwrite = ([.build.overwrite[] | select(.version == \"$v\")] | unique) |
-        .build.dest = \"$SITE_DIR\"" $DOCFX_FILE > docfx_temp.json
+        .build.dest = \"$SITE_DIR\"" $DOCFX_FILE > docfx_build_temp.json
     
-    $DOCFX_EXE build docfx_temp.json || echo "Warning: build failed for $v, ignoring..."
+    $DOCFX_EXE build docfx_build_temp.json || echo "Warning: build failed for $v, ignoring..."
     
-    # 3. Preserve the search index for this version
+    # Preserve the search index for this version
     if [ -f "$SITE_DIR/index.json" ]; then
        mv "$SITE_DIR/index.json" "$SITE_DIR/index-$v.json"
        echo "Saved index-$v.json"
     fi
   done
-  rm -f docfx_temp.json
+  rm -f docfx_build_temp.json
 }
 
 create_links() {
