@@ -520,7 +520,8 @@
     "resource": [
       {
         "files": [
-          "images/**"
+          "images/**",
+          "templates/**"
         ]
       }
     ],

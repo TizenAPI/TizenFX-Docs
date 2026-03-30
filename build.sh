@@ -179,12 +179,16 @@ build_docs() {
        echo "Saved index-$v.json"
     fi
   done
+  cp -rf $SCRIPT_DIR/images $SITE_DIR/ || true
+  cp -rf $SCRIPT_DIR/templates $SITE_DIR/ || true
   rm -f docfx_build_temp.json
 }
 
 create_links() {
   echo "Generating symlinks in $SITE_DIR ..."
   cp -f $COMMIT_HASH_FILE $SITE_DIR || true
+  cp -rf $SCRIPT_DIR/images $SITE_DIR/ || true
+  cp -rf $SCRIPT_DIR/templates $SITE_DIR/ || true
 
   # generate symlinks
   pushd $SITE_DIR
