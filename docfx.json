@@ -4,7 +4,7 @@
       "src": [
         {
           "files": [
-            "*/*.csproj"
+            "**/*.csproj"
           ],
           "exclude": [
             "**/obj/**",
@@ -15,7 +15,8 @@
       ],
       "dest": "obj/API14/api",
       "properties": {
-        "DefineConstants": "DOCFX"
+        "DefineConstants": "DOCFX",
+        "TargetFramework": "net8.0"
       },
       "filter": "filterConfig.yml"
     },
@@ -23,7 +24,7 @@
       "src": [
         {
           "files": [
-            "*/*.csproj"
+            "**/*.csproj"
           ],
           "exclude": [
             "**/obj/**",
@@ -34,7 +35,8 @@
       ],
       "dest": "obj/API13/api",
       "properties": {
-        "DefineConstants": "DOCFX"
+        "DefineConstants": "DOCFX",
+        "TargetFramework": "net8.0"
       },
       "filter": "filterConfig.yml"
     },
@@ -42,7 +44,7 @@
       "src": [
         {
           "files": [
-            "*/*.csproj"
+            "**/*.csproj"
           ],
           "exclude": [
             "**/obj/**",
@@ -61,7 +63,7 @@
       "src": [
         {
           "files": [
-            "*/*.csproj"
+            "**/*.csproj"
           ],
           "exclude": [
             "**/obj/**",
@@ -80,7 +82,7 @@
       "src": [
         {
           "files": [
-            "*/*.csproj"
+            "**/*.csproj"
           ],
           "exclude": [
             "**/obj/**",
@@ -99,7 +101,7 @@
       "src": [
         {
           "files": [
-            "*/*.csproj"
+            "**/*.csproj"
           ],
           "exclude": [
             "**/obj/**",
@@ -118,7 +120,7 @@
       "src": [
         {
           "files": [
-            "*/*.csproj"
+            "**/*.csproj"
           ],
           "exclude": [
             "**/obj/**",
@@ -137,7 +139,7 @@
       "src": [
         {
           "files": [
-            "*/*.csproj"
+            "**/*.csproj"
           ],
           "exclude": [
             "**/obj/**",
@@ -156,7 +158,7 @@
       "src": [
         {
           "files": [
-            "*/*.csproj"
+            "**/*.csproj"
           ],
           "exclude": [
             "**/obj/**",
@@ -175,7 +177,7 @@
       "src": [
         {
           "files": [
-            "*/*.csproj"
+            "**/*.csproj"
           ],
           "exclude": [
             "**/obj/**",
@@ -194,7 +196,7 @@
       "src": [
         {
           "files": [
-            "*/*.csproj"
+            "**/*.csproj"
           ],
           "exclude": [
             "**/obj/**",
@@ -213,7 +215,7 @@
       "src": [
         {
           "files": [
-            "*/*.csproj"
+            "**/*.csproj"
           ],
           "exclude": [
             "**/obj/**",
