@@ -1,3 +1,8 @@
 obj/
 _site/
 repos/
+node_modules/
+docfx_temp.json
+_site_test/
+docfx_test_verify.json
+docfx_test_verify_log.txt
