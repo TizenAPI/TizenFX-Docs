@@ -101,8 +101,11 @@ restore_repos() {
     if [ -d "$REPO_DIR/$v" ]; then
       pushd $REPO_DIR/$v
       if [ ! -f $TEMP_SLN_FILE ]; then
-        dotnet new sln -n $TEMP_SLN_NAME -f sln
-        ls
+        # --format sln forces classic .sln on SDK >= 9 (which defaults to .slnx);
+        # SDK 8 does not have the option but already defaults to .sln
+        if ! dotnet new sln -n $TEMP_SLN_NAME --format sln 2>/dev/null; then
+          dotnet new sln -n $TEMP_SLN_NAME
+        fi
         dotnet sln $TEMP_SLN_FILE add src/**/*.csproj
         if [ -d internals/src ]; then
           dotnet sln $TEMP_SLN_FILE add internals/src/**/*.csproj
