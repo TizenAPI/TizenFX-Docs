@@ -1,9 +1,9 @@
 #!/bin/bash -e
 SCRIPT_DIR=$(dirname $(readlink -f $0))
 
-VERSIONS="API4 API5 API6 API7 API8 API9 API10 API11 API12 API13 API14"
-BRANCH_API14=main
-STABLE="API12"
+VERSIONS="API4 API5 API6 API7 API8 API9 API10 API11 API12 API13 API14 API15"
+BRANCH_API15=main
+STABLE="API14"
 
 GIT_URL="https://github.com/Samsung/TizenFX.git"
 REPO_DIR="$SCRIPT_DIR/repos"
@@ -121,8 +121,8 @@ build_docs() {
   local target_v=$1
   echo "Use $DOCFX_FILE"
   
-  local DOCFX_EXE=docfx
-  if [ -f "$HOME/.dotnet/tools/docfx" ]; then
+  local DOCFX_EXE=${DOCFX:-docfx}
+  if [ -z "$DOCFX" ] && [ -f "$HOME/.dotnet/tools/docfx" ]; then
     DOCFX_EXE="$HOME/.dotnet/tools/docfx"
   fi
 
@@ -181,6 +181,8 @@ build_docs() {
   done
   cp -rf $SCRIPT_DIR/images $SITE_DIR/ || true
   cp -rf $SCRIPT_DIR/templates $SITE_DIR/ || true
+  # keep the commit hashes with the site so split build/deploy jobs can carry it as an artifact
+  cp -f $COMMIT_HASH_FILE $SITE_DIR/ || true
   rm -f docfx_build_temp.json
 }
 
@@ -201,7 +203,7 @@ create_links() {
       ln -s $v $branch
     fi
   done
-  ln -s master devel
+  ln -s main devel
   popd
 }
 
@@ -209,6 +211,21 @@ build_index() {
   command node --max-old-space-size=4096 $SCRIPT_DIR/build-index2.js
   rm -f $SITE_DIR/index.json
   create_links
+}
+
+# Guard against silently deploying an empty/broken site:
+# every version must have a reasonable number of generated API pages.
+verify_site() {
+  local failed=0
+  for v in $VERSIONS internals; do
+    local count=$(find $SITE_DIR/$v/api -name '*.html' 2>/dev/null | wc -l)
+    echo "$v: $count generated api pages"
+    if [ "$count" -lt 100 ]; then
+      echo "ERROR: $v looks empty or missing (only $count pages)"
+      failed=1
+    fi
+  done
+  return $failed
 }
 
 build_full() {
@@ -236,6 +253,8 @@ case "$CMD" in
   restore) restore_repos "$PARAM" ;;
   build) build_docs "$PARAM" ;;
   index) build_index ;;
+  links) create_links ;;
+  verify) verify_site ;;
   clean) clean ;;
   purge) purge ;;
   "") build_full ;;

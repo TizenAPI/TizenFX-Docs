@@ -260,8 +260,7 @@
           "**/*.yml"
         ],
         "src": "obj/API15",
-        "dest": "API15",
-        "rootTocPath": "toc.html"
+        "dest": "API15"
       },
       {
         "version": "API15",
@@ -269,8 +268,7 @@
           "**/*.{yml,md}"
         ],
         "src": "specs/API15",
-        "dest": "API15",
-        "rootTocPath": "toc.html"
+        "dest": "API15"
       },
       {
         "version": "API14",
@@ -278,8 +276,7 @@
           "**/*.yml"
         ],
         "src": "obj/API14",
-        "dest": "API14",
-        "rootTocPath": "toc.html"
+        "dest": "API14"
       },
       {
         "version": "API14",
@@ -287,8 +284,7 @@
           "**/*.{yml,md}"
         ],
         "src": "specs/API14",
-        "dest": "API14",
-        "rootTocPath": "toc.html"
+        "dest": "API14"
       },
       {
         "version": "API13",
@@ -296,8 +292,7 @@
           "**/*.yml"
         ],
         "src": "obj/API13",
-        "dest": "API13",
-        "rootTocPath": "toc.html"
+        "dest": "API13"
       },
       {
         "version": "API13",
@@ -305,8 +300,7 @@
           "**/*.{yml,md}"
         ],
         "src": "specs/API13",
-        "dest": "API13",
-        "rootTocPath": "toc.html"
+        "dest": "API13"
       },
       {
         "version": "API12",
@@ -314,8 +308,7 @@
           "**/*.yml"
         ],
         "src": "obj/API12",
-        "dest": "API12",
-        "rootTocPath": "toc.html"
+        "dest": "API12"
       },
       {
         "version": "API12",
@@ -323,8 +316,7 @@
           "**/*.{yml,md}"
         ],
         "src": "specs/API12",
-        "dest": "API12",
-        "rootTocPath": "toc.html"
+        "dest": "API12"
       },
       {
         "version": "API11",
@@ -332,8 +324,7 @@
           "**/*.yml"
         ],
         "src": "obj/API11",
-        "dest": "API11",
-        "rootTocPath": "toc.html"
+        "dest": "API11"
       },
       {
         "version": "API11",
@@ -341,8 +332,7 @@
           "**/*.{yml,md}"
         ],
         "src": "specs/API11",
-        "dest": "API11",
-        "rootTocPath": "toc.html"
+        "dest": "API11"
       },
       {
         "version": "API10",
@@ -350,8 +340,7 @@
           "**/*.yml"
         ],
         "src": "obj/API10",
-        "dest": "API10",
-        "rootTocPath": "toc.html"
+        "dest": "API10"
       },
       {
         "version": "API10",
@@ -359,8 +348,7 @@
           "**/*.{yml,md}"
         ],
         "src": "specs/API10",
-        "dest": "API10",
-        "rootTocPath": "toc.html"
+        "dest": "API10"
       },
       {
         "version": "API9",
@@ -368,8 +356,7 @@
           "**/*.yml"
         ],
         "src": "obj/API9",
-        "dest": "API9",
-        "rootTocPath": "toc.html"
+        "dest": "API9"
       },
       {
         "version": "API9",
@@ -377,8 +364,7 @@
           "**/*.{yml,md}"
         ],
         "src": "specs/API9",
-        "dest": "API9",
-        "rootTocPath": "toc.html"
+        "dest": "API9"
       },
       {
         "version": "API8",
@@ -386,8 +372,7 @@
           "**/*.yml"
         ],
         "src": "obj/API8",
-        "dest": "API8",
-        "rootTocPath": "toc.html"
+        "dest": "API8"
       },
       {
         "version": "API8",
@@ -395,8 +380,7 @@
           "**/*.{yml,md}"
         ],
         "src": "specs/API8",
-        "dest": "API8",
-        "rootTocPath": "toc.html"
+        "dest": "API8"
       },
       {
         "version": "API7",
@@ -404,8 +388,7 @@
           "**/*.yml"
         ],
         "src": "obj/API7",
-        "dest": "API7",
-        "rootTocPath": "toc.html"
+        "dest": "API7"
       },
       {
         "version": "API7",
@@ -413,8 +396,7 @@
           "**/*.{yml,md}"
         ],
         "src": "specs/API7",
-        "dest": "API7",
-        "rootTocPath": "toc.html"
+        "dest": "API7"
       },
       {
         "version": "API6",
@@ -422,8 +404,7 @@
           "**/*.yml"
         ],
         "src": "obj/API6",
-        "dest": "API6",
-        "rootTocPath": "toc.html"
+        "dest": "API6"
       },
       {
         "version": "API6",
@@ -431,8 +412,7 @@
           "**/*.{yml,md}"
         ],
         "src": "specs/API6",
-        "dest": "API6",
-        "rootTocPath": "toc.html"
+        "dest": "API6"
       },
       {
         "version": "API5",
@@ -440,8 +420,7 @@
           "**/*.yml"
         ],
         "src": "obj/API5",
-        "dest": "API5",
-        "rootTocPath": "toc.html"
+        "dest": "API5"
       },
       {
         "version": "API5",
@@ -449,8 +428,7 @@
           "**/*.{yml,md}"
         ],
         "src": "specs/API5",
-        "dest": "API5",
-        "rootTocPath": "toc.html"
+        "dest": "API5"
       },
       {
         "version": "API4",
@@ -458,8 +436,7 @@
           "**/*.yml"
         ],
         "src": "obj/API4",
-        "dest": "API4",
-        "rootTocPath": "toc.html"
+        "dest": "API4"
       },
       {
         "version": "API4",
@@ -467,8 +444,7 @@
           "**/*.{yml,md}"
         ],
         "src": "specs/API4",
-        "dest": "API4",
-        "rootTocPath": "toc.html"
+        "dest": "API4"
       },
       {
         "version": "internals",
@@ -476,8 +452,7 @@
           "**/*.yml"
         ],
         "src": "obj/internals",
-        "dest": "internals",
-        "rootTocPath": "toc.html"
+        "dest": "internals"
       },
       {
         "version": "internals",
@@ -485,12 +460,10 @@
           "**/*.{yml,md}"
         ],
         "src": "repos/API15/internals/docs",
-        "dest": "internals",
-        "rootTocPath": "toc.html"
+        "dest": "internals"
       },
       {
         "files": [
-          "toc.yml",
           "index.md"
         ]
       }
@@ -565,25 +538,22 @@
     "resource": [
       {
         "files": [
-          "images/**",
-          "templates/**"
+          "images/**"
         ]
       }
     ],
     "dest": "_site",
     "template": [
       "default",
-      "./templates/material",
-      "./templates/tizen"
+      "./templates/tizen_docs"
     ],
     "globalMetadata": {
       "_appLogoPath": "images/tizen_logo.png",
       "_appFaviconPath": "images/tizen_favicon.ico",
-      "_appFooter": "<span>Copyright &copy; 2016-2025 Samsung <br> Generated by <strong>DocFX</strong></span>",
       "_disableAffix": false,
       "_disableContribution": false,
-      "_baseUrl": "https://samsung.github.io/TizenFX/main/",
-      "_enableSearch": "true"
+      "_disableNavbar": true,
+      "_enableSearch": false
     },
     "xrefService": [
       "https://xref.docs.microsoft.com/query?uid={uid}"
