@@ -221,10 +221,15 @@ build_index() {
 verify_site() {
   local failed=0
   for v in $VERSIONS internals; do
+    # internals has a small API surface (a handful of projects); API levels are large
+    local min=100
+    if [ "$v" == "internals" ]; then
+      min=10
+    fi
     local count=$(find $SITE_DIR/$v/api -name '*.html' 2>/dev/null | wc -l)
     echo "$v: $count generated api pages"
-    if [ "$count" -lt 100 ]; then
-      echo "ERROR: $v looks empty or missing (only $count pages)"
+    if [ "$count" -lt $min ]; then
+      echo "ERROR: $v looks empty or missing (only $count pages, expected >= $min)"
       failed=1
     fi
   done
