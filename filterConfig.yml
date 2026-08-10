@@ -5,10 +5,5 @@ apiRules:
         ctorArguments:
         - System.ComponentModel.EditorBrowsableState.Never
   - exclude:
-      hasAttribute:
-        uid: System.ComponentModel.EditorBrowsableAttribute
-        ctorArguments:
-        - Never
-  - exclude:
-      uid: Tizen\.NUI\.GestureDetector
+      uidRegex: ^Tizen\.NUI\.GestureDetector$
       type: Class
