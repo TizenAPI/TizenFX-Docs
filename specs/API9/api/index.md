@@ -60,6 +60,7 @@
 * <xref:Tizen.NUI.Components>
 * <xref:Tizen.NUI.Constants>
 * <xref:Tizen.NUI.Extension>
+* <xref:Tizen.NUI.Text>
 * <xref:Tizen.NUI.WindowSystem.Shell>
 * <xref:Tizen.PhonenumberUtils>
 * <xref:Tizen.Pims.Calendar>

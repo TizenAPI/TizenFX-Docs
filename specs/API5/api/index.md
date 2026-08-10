@@ -1,5 +1,8 @@
 ## TizenFX API Level 5
 
+* <xref:ElmSharp>
+* <xref:ElmSharp.Accessible>
+* <xref:ElmSharp.Wearable>
 * <xref:Tizen>
 * <xref:Tizen.Account.AccountManager>
 * <xref:Tizen.Account.FidoClient>
@@ -13,6 +16,7 @@
 * <xref:Tizen.Applications.Messages>
 * <xref:Tizen.Applications.NotificationEventListener>
 * <xref:Tizen.Applications.Notifications>
+* <xref:Tizen.Applications.RPCPort>
 * <xref:Tizen.Applications.Shortcut>
 * <xref:Tizen.Common>
 * <xref:Tizen.Content.Download>
@@ -31,10 +35,6 @@
 * <xref:Tizen.Multimedia.Remoting>
 * <xref:Tizen.Multimedia.Util>
 * <xref:Tizen.Multimedia.Vision>
-* <xref:Tizen.NUI>
-* <xref:Tizen.NUI.BaseComponents>
-* <xref:Tizen.NUI.Constants>
-* <xref:Tizen.NUI.UIComponents>
 * <xref:Tizen.Network.Bluetooth>
 * <xref:Tizen.Network.Connection>
 * <xref:Tizen.Network.IoTConnectivity>
@@ -43,6 +43,11 @@
 * <xref:Tizen.Network.Smartcard>
 * <xref:Tizen.Network.WiFi>
 * <xref:Tizen.Network.WiFiDirect>
+* <xref:Tizen.Nlp>
+* <xref:Tizen.NUI>
+* <xref:Tizen.NUI.BaseComponents>
+* <xref:Tizen.NUI.Constants>
+* <xref:Tizen.NUI.UIComponents>
 * <xref:Tizen.PhonenumberUtils>
 * <xref:Tizen.Pims.Calendar>
 * <xref:Tizen.Pims.Calendar.CalendarViews>
@@ -64,6 +69,3 @@
 * <xref:Tizen.Uix.TtsEngine>
 * <xref:Tizen.Uix.VoiceControl>
 * <xref:Tizen.WebView>
-* <xref:ElmSharp>
-* <xref:ElmSharp.Accessible>
-* <xref:ElmSharp.Wearable>

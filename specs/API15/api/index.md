@@ -1,4 +1,4 @@
-## TizenFX API Level 14
+## TizenFX API Level 15
 
 * <xref:ElmSharp>
 * <xref:ElmSharp.Accessible>
@@ -8,11 +8,9 @@
 * <xref:Tizen.Account.OAuth2>
 * <xref:Tizen.Account.SyncManager>
 * <xref:Tizen.Applications>
-* <xref:Tizen.Applications.AttachPanel>
 * <xref:Tizen.Applications.Cion>
 * <xref:Tizen.Applications.ComponentBased>
 * <xref:Tizen.Applications.ComponentBased.Common>
-* <xref:Tizen.Applications.ComponentBased.Default>
 * <xref:Tizen.Applications.CoreBackend>
 * <xref:Tizen.Applications.DataControl>
 * <xref:Tizen.Applications.EventManager>
@@ -66,10 +64,8 @@
 * <xref:Tizen.Pims.Contacts>
 * <xref:Tizen.Pims.Contacts.ContactsViews>
 * <xref:Tizen.Security>
-* <xref:Tizen.Security.DevicePolicyManager>
 * <xref:Tizen.Security.SecureRepository>
 * <xref:Tizen.Security.SecureRepository.Crypto>
-* <xref:Tizen.Security.TEEC>
 * <xref:Tizen.Security.WebAuthn>
 * <xref:Tizen.Sensor>
 * <xref:Tizen.System>

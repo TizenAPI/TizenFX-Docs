@@ -8,7 +8,6 @@
 * <xref:Tizen.Account.OAuth2>
 * <xref:Tizen.Account.SyncManager>
 * <xref:Tizen.Applications>
-* <xref:Tizen.Applications.AttachPanel>
 * <xref:Tizen.Applications.Cion>
 * <xref:Tizen.Applications.ComponentBased>
 * <xref:Tizen.Applications.ComponentBased.Common>
