@@ -151,6 +151,10 @@ build_docs() {
       $DOCFX_EXE metadata $DOCFX_FILE
   fi
 
+  # Regenerate per-version landing pages from the generated metadata so
+  # the namespace lists always match the actual API surface.
+  generate_landing_pages "$target_v"
+
   # 2. Build Documentation (Sequential)
   local count=$(jq '.metadata | length' $DOCFX_FILE)
   
@@ -187,6 +191,33 @@ build_docs() {
   # keep the commit hashes with the site so split build/deploy jobs can carry it as an artifact
   cp -f $COMMIT_HASH_FILE $SITE_DIR/ || true
   rm -f docfx_build_temp.json
+}
+
+generate_landing_pages() {
+  local target_v=$1
+  for v in $VERSIONS; do
+    if [ ! -z "$target_v" ] && [ "$v" != "$target_v" ]; then
+      continue
+    fi
+    local toc="$OBJ_DIR/$v/api/toc.yml"
+    local spec_dir="$SCRIPT_DIR/specs/$v/api"
+    if [ ! -f "$toc" ] || [ ! -d "$spec_dir" ]; then
+      continue
+    fi
+    # top-level (column 0) uids in the metadata toc are the namespaces
+    local namespaces=$(grep -E '^- uid: ' "$toc" | sed 's/^- uid: //' | sort -f)
+    local ns_count=$(echo "$namespaces" | grep -c .)
+    if [ "$ns_count" -lt 10 ]; then
+      echo "Skip landing page regen for $v: only $ns_count namespaces in metadata"
+      continue
+    fi
+    {
+      echo "## TizenFX API Level ${v#API}"
+      echo ""
+      echo "$namespaces" | sed 's/^/* <xref:/; s/$/>/'
+    } > "$spec_dir/index.md"
+    echo "Regenerated landing page for $v ($ns_count namespaces)"
+  done
 }
 
 create_links() {
