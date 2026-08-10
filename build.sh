@@ -232,6 +232,12 @@ verify_site() {
       echo "ERROR: $v looks empty or missing (only $count pages, expected >= $min)"
       failed=1
     fi
+    # page counts alone cannot detect category-wide losses (e.g. a filter
+    # bug once dropped every class); require a well-known class page too
+    if [ "$v" != "internals" ] && [ ! -f "$SITE_DIR/$v/api/Tizen.NUI.BaseComponents.View.html" ]; then
+      echo "ERROR: $v is missing landmark class page Tizen.NUI.BaseComponents.View"
+      failed=1
+    fi
   done
   return $failed
 }
