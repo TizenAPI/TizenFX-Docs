@@ -36,7 +36,7 @@
       "dest": "obj/API14/api",
       "properties": {
         "DefineConstants": "DOCFX",
-        "TargetFramework": "net6.0"
+        "TargetFramework": "net8.0"
       },
       "filter": "filterConfig.yml"
     },
