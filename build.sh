@@ -147,8 +147,30 @@ build_docs() {
           fi
       done
   else
-      # Build all metadata
-      $DOCFX_EXE metadata $DOCFX_FILE
+      # Extract metadata one version at a time, in separate docfx processes.
+      #
+      # Running a single `docfx metadata` over all 13 metadata entries makes every
+      # class's "Derived" list accumulate the same derived types once per tree that
+      # was already processed in that same process -- DocFX does not reset its
+      # derived-type index between metadata entries. Because the entries in
+      # docfx_tizen_docs.json are ordered API15 -> API4, the repeat count comes out
+      # as "number of trees processed up to and including this one": API15 gets 1
+      # copy, API14 gets 2, ... API4 gets 12.
+      #
+      # Measured on the published tizen-docs-pages output for
+      # Tizen.Applications.ComponentBased.Common.BaseComponent: a 30-sample check of
+      # the Derived entries matches that model 30/30, including WidgetComponent
+      # capping at 7 because it only exists in API9-API15. Downstream this shows up
+      # as 20,122 duplicated entries across 814 published pages.
+      local count=$(jq '.metadata | length' $DOCFX_FILE)
+      for ((i=0; i<$count; i++)); do
+          local api_dest=$(jq -r ".metadata[$i].dest" $DOCFX_FILE)
+          local v=$(echo $api_dest | cut -d'/' -f2)
+          echo "Generating metadata for $v ..."
+          jq ".metadata = [.metadata[$i]]" $DOCFX_FILE > docfx_metadata_temp.json
+          $DOCFX_EXE metadata docfx_metadata_temp.json
+          rm -f docfx_metadata_temp.json
+      done
   fi
 
   # Regenerate per-version landing pages from the generated metadata so
